@@ -25,8 +25,6 @@ checkWin
 checkLose
 Reset
 
-https://github.com/goldranger2099/PegGame/invitations
-
 Classes:
 PegGame
 Board
