@@ -18,4 +18,8 @@ public class Board
     board[mid] = 0;
     board[end] = 1;
   }
+  public int getPeg(pos)
+  {
+    return board[pos];
+  }
 }
