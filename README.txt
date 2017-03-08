@@ -14,26 +14,35 @@ Konami code easter egg
 Classes:
 
 PegGame
+
 Objects:
-Graphics
-Skins
-Button
-ButtonListener
+
+  Graphics
+  Skins
+  Button
+  ButtonListener
 Methods:
-main
-checkKonami
-loadGraphics
+
+  main
+  checkKonami
+  loadGraphics
+  
 Board
-Objects
-Array of pegs
+
+Objects:
+  Array of pegs
+  
 Methods:
-resetBoard
-getPosition
-setPosition
-removePeg
+  resetBoard
+  getPosition
+  setPosition
+  removePeg
+  
 Rules
-Objects
-Methods
-checkWinner
-checkLoser
-canMove
+
+Objects:
+
+Methods:
+  checkWinner
+  checkLoser
+  canMove
