@@ -22,4 +22,8 @@ public class Board
   {
     return board[pos];
   }
+  public array returnBoard()
+  {
+    return board;
+  }
 }
