@@ -9,23 +9,31 @@ Reset button to play again
 Winner textbox (North Star)
 Konami code easter egg
 
-Nouns:
-Board
-Peg
-Buttons (reset, skin)
-Button Click Listeners
-Rules
 
-Verbs:
-remove
+
+Classes:
+
+PegGame
+Objects:
+Graphics
+Skins
+Button
+ButtonListener
+Methods:
+main
+checkKonami
+loadGraphics
+Board
+Objects
+Array of pegs
+Methods:
+resetBoard
 getPosition
 setPosition
-select2
-checkWin
-checkLose
-Reset
-
-Classes:
-PegGame
-Board
+removePeg
 Rules
+Objects
+Methods
+checkWinner
+checkLoser
+canMove
