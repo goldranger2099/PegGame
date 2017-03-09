@@ -24,6 +24,10 @@ public class Board
     {
       this.value = value;
     }
+    public int getValue()
+    {
+      return value;
+    }
   }
   ArrayList<Peg> board = new ArrayList<>();
   Peg peg1 = new Peg(5, 5);
@@ -68,11 +72,21 @@ public class Board
       pegs = 1;
     }
   }
-  public int movePeg(start, mid, end)
+  public void removePeg(pos)
   {
-    board[start] = 0;
-    board[mid] = 0;
-    board[end] = 1;
+    if(pos > 0 && pos < 16)
+    {
+      board.get(pos).setValue(0);
+    }
+  }
+  public void movePeg(start, mid, end)
+  {
+    if (board.get(start).getValue() == 1 && board.get(mid).getValue() == 1 && board.get(end).getValue() == 0)
+    {
+      board.get(start).setValue() = 0;
+      board.get(mid).setValue() = 0;
+      board.get(end).setValue() = 1;
+    }
   }
   public ArrayList returnBoard()
   {
