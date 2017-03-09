@@ -72,20 +72,25 @@ public class Board
       pegs = 1;
     }
   }
-  public void removePeg(pos)
+  public void removePeg(peg)
   {
-    if(pos > 0 && pos < 16)
+    if(peg > 0 && peg < 16)
     {
-      board.get(pos).setValue(0);
+      board.get(peg - 1).setValue(0);
     }
   }
   public void movePeg(start, mid, end)
   {
-    if (board.get(start).getValue() == 1 && board.get(mid).getValue() == 1 && board.get(end).getValue() == 0)
+    boolean canMove = false;
+    if (start > 0 && start < 16 && mid > 0 && mid < 16 && end > 0 && end < 16)
     {
-      board.get(start).setValue() = 0;
-      board.get(mid).setValue() = 0;
-      board.get(end).setValue() = 1;
+      canMove = true;
+    }
+    if (canMove && board.get(start).getValue() == 1 && board.get(mid).getValue() == 1 && board.get(end).getValue() == 0)
+    {
+      board.get(start - 1).setValue() = 0;
+      board.get(mid - 1).setValue() = 0;
+      board.get(end - 1).setValue() = 1;
     }
   }
   public ArrayList returnBoard()
