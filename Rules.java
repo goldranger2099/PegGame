@@ -8,7 +8,7 @@ public class Rules
     {
       if(Board.getPeg(i) == 1)
       {
-         counter++
+         counter++;
       }
     }
     if(counter == 1)
@@ -29,7 +29,7 @@ public class Rules
     {
       if(Board.getPeg(i) == 1)
       {
-         counter++
+         counter++;
       }
     }
     if(counter != 1)
@@ -41,7 +41,6 @@ public class Rules
       moreThanOne = true; 
     }
     return moreThanOne;
-    
   }
   public void checkMove()
   {
