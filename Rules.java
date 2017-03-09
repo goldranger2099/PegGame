@@ -4,9 +4,9 @@ public class Rules
   {
     boolean onePeg = false;
     int counter = 0;
-    for(int i = 0; i < Board.getBoard().length; i++)
+    for(int i = 0; i < Board.getBoard().size(); i++)
     {
-      if(Board.getPeg(i) == 1)
+      if(Board.get(i).getValue() == 1)
       {
          counter++;
       }
