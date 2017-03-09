@@ -43,4 +43,14 @@ public class Rules
     return moreThanOne;
     
   }
+  public void checkMove()
+  {
+    for(int i = 0; i < Board.getBoard().length; i++)
+    {
+      if()
+      {
+        
+      }
+         
+  }
 }
