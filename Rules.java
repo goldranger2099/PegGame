@@ -1,12 +1,12 @@
 public class Rules
 {
-  public boolean checkWinner(Board)
+  public boolean checkWinner(Board board)
   {
     boolean onePeg = false;
     int counter = 0;
-    for(int i = 0; i < Board.getBoard().size(); i++)
+    for(int i = 0; i < board.getBoard().size(); i++)
     {
-      if(Board.get(i).getValue() == 1)
+      if(board.get(i).getValue() == 1)
       {
          counter++;
       }
@@ -21,13 +21,13 @@ public class Rules
     }
     return onePeg;
   }
-  public boolean checkLoser(Board)
+  public boolean checkLoser(Board board)
   {
     boolean moreThanOne = false;
     int counter = 0;
-    for(int i = 0; i < Board.getBoard().length; i++)
+    for(int i = 0; i < board.getBoard().size(); i++)
     {
-      if(Board.getPeg(i) == 1)
+      if(board.get(i).getValue() == 1)
       {
          counter++;
       }
