@@ -93,6 +93,16 @@ public class Board
       board.get(end - 1).setValue() = 1;
     }
   }
+  public Peg getPeg(posX, posY)
+  {
+    for(int i = 0; i < board.size(); i++)
+    {
+      if(posX >= 1 && posX <= 9 && posY >= 1 && posY <= 5 && posX == board.get(i).getPosX() && posY == board.get(i).getPosY())
+      {
+        return board.get(i);
+      }
+    }
+  }
   public ArrayList returnBoard()
   {
     return board;
