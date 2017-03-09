@@ -42,14 +42,14 @@ public class Rules
     }
     return moreThanOne;
   }
-  public void checkMove()
+  public boolean canMove(Board board, int peg)
   {
-    for(int i = 0; i < Board.getBoard().length; i++)
     {
-      if()
+      if(board)
       {
-        
+        //x +1
+        return true;
       }
-         
+    }
   }
 }
