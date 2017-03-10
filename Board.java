@@ -99,7 +99,7 @@ public class Board
     }
     return;
   }
-  public ArrayList returnBoard()
+  public ArrayList getBoard()
   {
     return board;
   }
