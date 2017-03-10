@@ -58,7 +58,36 @@ public class Rules
         return true;
       }
     }
-    else if((board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() - 1, board.get(peg - 1).getPosY() - 1)).getValue == 1))
+    else if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() - 1, board.get(peg - 1).getPosY() - 1)).getValue == 1))
     {
-      
+      if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() - 2, board.get(peg - 1).getPosY() - 2)).getValue == 0))
+      {
+        return true;
+      }
+    }
+    else if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() + 1, board.get(peg - 1).getPosY() - 1)).getValue == 1))
+    {
+      if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() + 2, board.get(peg - 1).getPosY() - 2)).getValue == 0))
+      {
+        return true;
+      }
+    }
+    else if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() - 1, board.get(peg - 1).getPosY() + 1)).getValue == 1))
+    {
+      if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() - 2, board.get(peg - 1).getPosY() + 2)).getValue == 0))
+      {
+        return true;
+      }
+    }
+    else if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() + 1, board.get(peg - 1).getPosY() + 1)).getValue == 1))
+    {
+      if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() + 2, board.get(peg - 1).getPosY() + 2)).getValue == 0))
+      {
+        return true;
+      }
+    else
+    {
+      return false;
+    }
   }
+}
