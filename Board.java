@@ -69,7 +69,7 @@ public class Board
   {
     for(int pegs: board)
     {
-      pegs = 1;
+      pegs.setValue(1);
     }
   }
   public void removePeg(peg)
@@ -79,14 +79,9 @@ public class Board
       board.get(peg - 1).setValue(0);
     }
   }
-  public void movePeg(start, mid, end)
+  public void movePeg(int start, int mid, int end)
   {
-    boolean canMove = false;
-    if (start > 0 && start < 16 && mid > 0 && mid < 16 && end > 0 && end < 16)
-    {
-      canMove = true;
-    }
-    if (canMove && board.get(start).getValue() == 1 && board.get(mid).getValue() == 1 && board.get(end).getValue() == 0)
+    if (board.get(start).getValue() == 1 && board.get(mid).getValue() == 1 && board.get(end).getValue() == 0)
     {
       board.get(start - 1).setValue() = 0;
       board.get(mid - 1).setValue() = 0;
