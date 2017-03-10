@@ -44,12 +44,21 @@ public class Rules
   }
   public boolean canMove(Board board, int peg)
   {
+    if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() + 2, board.get(peg - 1).getPosY())).getValue == 1)
     {
-      if(board)
+      if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() + 4, board.get(peg - 1).getPosY())).getValue == 0)
       {
-        //x +1
         return true;
       }
     }
+    else if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() - 2, board.get(peg - 1).getPosY())).getValue == 1))
+    {
+      if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() - 4, board.get(peg - 1).getPosY())).getValue == 0)
+      {
+        return true;
+      }
+    }
+    else if((board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() - 1, board.get(peg - 1).getPosY() - 1)).getValue == 1))
+    {
+      
   }
-}
