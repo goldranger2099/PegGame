@@ -1,5 +1,6 @@
 public class Rules
 {
+  // Checks if there is one peg left.
   public boolean checkWinner(Board board)
   {
     boolean onePeg = false;
@@ -21,6 +22,7 @@ public class Rules
     }
     return onePeg;
   }
+  //Checks to see if there are any moves left.
   public boolean checkLoser(Board board)
   {
     boolean moreThanOne = false;
@@ -42,6 +44,7 @@ public class Rules
     }
     return moreThanOne;
   }
+  //Cchecks to see whether a peg can move to a certain space or not.
   public boolean canMove(Board board, int peg)
   {
     if(board.get(peg - 1).getPeg(board.get(peg - 1).getPosX() + 2, board.get(peg - 1).getPosY())).getValue == 1)
