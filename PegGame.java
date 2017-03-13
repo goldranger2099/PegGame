@@ -82,7 +82,15 @@ public class PegGame
       
     }
     
+    /**
+    * Listener class for buttons for choosing pegs on the board
+    */
+      class ClickListener implements ActionListener
+      {
+      }
+    
     //Adds listener to buttons 1-15
+    ActionListener boardListener = new ClickListener();
     button1.addActionListener(boardListener);
     button2.addActionListener(boardListener);
     button3.addActionListener(boardListener);
