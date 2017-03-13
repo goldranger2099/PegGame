@@ -14,6 +14,7 @@ public class PegGame
     JFrame boardFrame = new JFrame()
     JFrame pegBoard = new JFrame();
     GridLayout pyramid = new GridLayout(5, 1);
+    pegBoard.setLayout(pyramid);
     JFrame level1 = new JFrame();
     JFrame level2 = new JFrame();
     GridLayout onextwo = new GridLayout(1, 2);
@@ -33,8 +34,13 @@ public class PegGame
     {
       
     }
-    boardFrame.add(pegGame, BorderLayout.CENTER);
+    
+    //Adds buttons to board and makes board visible
+    boardFrame.add(pegBoard, BorderLayout.CENTER);
     boardFrame.add(title, BorderLayout.NORTH);
     boardFrame.add(resetButton, BorderLayout.SOUTH);
+    boardFrame.pack();
+    boardFrame.setResizable(false);
+    boardFrame.setVisible(true);
   }
 }
