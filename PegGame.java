@@ -38,6 +38,17 @@ public class PegGame
     //Reset button
     JButton resetButton = new JButton("RESET");
     
+    
+    //Creates title display area
+    JLabel titleDisplayText = new JLabel("");
+    JPanel titleDisplay = new JPanel();
+    
+    //Creates board object.
+    final Board board = new Board();
+      
+    //Creates rules object.
+    final Rules rules = new Rules();
+    
     public boolean checkKonami()
     {
       
