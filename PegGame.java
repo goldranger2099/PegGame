@@ -12,7 +12,7 @@ public class PegGame
   public static void main(String[] args)
   {
     //Creates playing window, board, and board pyramid
-    JFrame boardFrame = new JFrame()
+    JFrame boardFrame = new JFrame();
     JFrame pegBoard = new JFrame();
     GridLayout pyramid = new GridLayout(5, 1);
     pegBoard.setLayout(pyramid);
@@ -30,14 +30,38 @@ public class PegGame
     GridLayout onexfive = new GridLayout(1, 5);
     level5.setLayout(onexfive);
     
-    //JPanels 1 - 15
-    
     //Buttons 1 - 15
-    
+    JButton button1 = new JButton("");
+    button1.setPreferredSize(100,100);
+    JButton button2 = new JButton("");
+    button2.setPreferredSize(100,100);
+    JButton button3 = new JButton("");
+    button3.setPreferredSize(100,100);
+    JButton button4 = new JButton("");
+    button4.setPreferredSize(100,100);
+    JButton button6 = new JButton("");
+    button6.setPreferredSize(100,100);
+    JButton button7 = new JButton("");
+    button7.setPreferredSize(100,100);
+    JButton button8 = new JButton("");
+    button8.setPreferredSize(100,100);
+    JButton button9 = new JButton("");
+    button9.setPreferredSize(100,100);
+    JButton button10 = new JButton("");
+    button10.setPreferredSize(100,100);
+    JButton button11 = new JButton("");
+    button11.setPreferredSize(100,100);
+    JButton button12 = new JButton("");
+    button12.setPreferredSize(100,100);
+    JButton button13 = new JButton("");
+    button13.setPreferredSize(100,100);
+    JButton button14 = new JButton("");
+    button14.setPreferredSize(100,100);
+    JButton button15 = new JButton("");
+    button15.setPreferredSize(100,100);
    
     //Reset button
     JButton resetButton = new JButton("RESET");
-    
     
     //Creates title display area
     JLabel titleDisplayText = new JLabel("");
