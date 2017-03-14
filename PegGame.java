@@ -33,35 +33,53 @@ public class PegGame
     //Buttons 1 - 15
     JButton button1 = new JButton("");
     button1.setPreferredSize(100,100);
+    button1.setBackground(color.BLACK);
     JButton button2 = new JButton("");
     button2.setPreferredSize(100,100);
+    button2.setBackground(color.BLACK);
     JButton button3 = new JButton("");
     button3.setPreferredSize(100,100);
+    button3.setBackground(color.BLACK);
     JButton button4 = new JButton("");
     button4.setPreferredSize(100,100);
+    button4.setBackground(color.BLACK);
+    JButton button5 = new JButton("");
+    button5.setPreferredSize(100,100);
+    button5.setBackground(color.BLACK);
     JButton button6 = new JButton("");
     button6.setPreferredSize(100,100);
+    button6.setBackground(color.BLACK);
     JButton button7 = new JButton("");
     button7.setPreferredSize(100,100);
+    button7.setBackground(color.BLACK);
     JButton button8 = new JButton("");
     button8.setPreferredSize(100,100);
+    button8.setBackground(color.BLACK);
     JButton button9 = new JButton("");
     button9.setPreferredSize(100,100);
+    button9.setBackground(color.BLACK);
     JButton button10 = new JButton("");
     button10.setPreferredSize(100,100);
+    button10.setBackground(color.BLACK);
     JButton button11 = new JButton("");
     button11.setPreferredSize(100,100);
+    button11.setBackground(color.BLACK);
     JButton button12 = new JButton("");
     button12.setPreferredSize(100,100);
+    button12.setBackground(color.BLACK);
     JButton button13 = new JButton("");
     button13.setPreferredSize(100,100);
+    button13.setBackground(color.BLACK);
     JButton button14 = new JButton("");
     button14.setPreferredSize(100,100);
+    button14.setBackground(color.BLACK);
     JButton button15 = new JButton("");
     button15.setPreferredSize(100,100);
+    button15.setBackground(color.BLACK);
    
     //Reset button
     JButton resetButton = new JButton("RESET");
+    resetButton.setBackground(color.RED);
     
     //Creates title display area
     JLabel titleDisplayText = new JLabel("PEG GAME");
@@ -154,7 +172,7 @@ public class PegGame
           button14.setEnabled(true);
           button15.setEnabled(true);
         }
-        if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
+        if(rules.checkWinner(board) == true && rules.checkLoser(board) == 0)
         {
           titleDisplaytext.setText("YOU WIN!");
           button1.setEnabled(false);
