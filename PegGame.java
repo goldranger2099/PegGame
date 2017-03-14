@@ -93,6 +93,48 @@ public class PegGame
         if (e.getSource() == button1)
         {
         }
+        else if(e.getSource() == button2)
+        {
+        }
+        else if(e.getSource() == button3)
+        {
+        }
+        else if(e.getSource() == button4)
+        {
+        }
+        else if(e.getSource() == button5)
+        {
+        }
+        else if(e.getSource() == button6)
+        {
+        }
+        else if(e.getSource() == button7)
+        {
+        }
+        else if(e.getSource() == button8)
+        {
+        }
+        else if(e.getSource() == button9)
+        {
+        }
+        else if(e.getSource() == button10)
+        {
+        }
+        else if(e.getSource() == button11)
+        {
+        }
+        else if(e.getSource() == button12)
+        {
+        }
+        else if(e.getSource() == button13)
+        {
+        }
+        else if(e.getSource() == button14)
+        {
+        }
+        else if(e.getSource() == button15)
+        {
+        }
         else if (e.getSource() == resetButton)
         {
           board.resetBoard();
