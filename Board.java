@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Board
 {
-  public class Peg
+  class Peg
   {
     /*
     Sets the X and Y of the Peg board as well as the beginning values.
