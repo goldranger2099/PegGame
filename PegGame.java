@@ -64,7 +64,7 @@ public class PegGame
     JButton resetButton = new JButton("RESET");
     
     //Creates title display area
-    JLabel titleDisplayText = new JLabel("");
+    JLabel titleDisplayText = new JLabel("PEG GAME");
     JPanel titleDisplay = new JPanel();
     
     //Creates board object.
@@ -85,9 +85,62 @@ public class PegGame
     /**
     * Listener class for buttons for choosing pegs on the board
     */
-      class ClickListener implements ActionListener
+    class ClickListener implements ActionListener
+    {
+      /**
+       * Button listener method to check button clicks.
+       * @param e Button clicked
+       */
+      public void actionPerformed(ActionEvent e)
       {
+        if (e.getSource() == button1)
+        {
+        }
+        else if (e.getSource() == resetButton)
+        {
+          board.resetBoard();
+          button1.setEnabled(true);
+          button2.setEnabled(true);
+          button3.setEnabled(true);
+          button4.setEnabled(true);
+          button5.setEnabled(true);
+          button6.setEnabled(true);
+          button7.setEnabled(true);
+          button8.setEnabled(true);
+          button9.setEnabled(true);
+          button10.setEnabled(true);
+          button11.setEnabled(true);
+          button12.setEnabled(true);
+          button13.setEnabled(true);
+          button14.setEnabled(true);
+          button15.setEnabled(true);
+        }
+        if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
+        {
+          titleDisplaytext.setText("YOU WIN!");
+          button1.setEnabled(false);
+          button2.setEnabled(false);
+          button3.setEnabled(false);
+          button4.setEnabled(false);
+          button5.setEnabled(false);
+          button6.setEnabled(false);
+          button7.setEnabled(false);
+          button8.setEnabled(false);
+          button9.setEnabled(false);
+          button10.setEnabled(false);
+          button11.setEnabled(false);
+          button12.setEnabled(false);
+          button13.setEnabled(false);
+          button14.setEnabled(false);
+          button15.setEnabled(false);
+        }
+        if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
+        {
+          
+        }
+        SwingUtilities.updateComponentTreeUI(boardFrame);
       }
+    }
     
     //Adds listener to buttons 1-15
     ActionListener boardListener = new ClickListener();
