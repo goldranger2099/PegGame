@@ -73,13 +73,10 @@ public class PegGame
     //Creates rules object.
     final Rules rules = new Rules();
     
+    //Easter egg: checks Konami code keyboard input
     public boolean checkKonami()
     {
-      
-    }
-    public void loadGraphics()
-    {
-      
+      return false;
     }
     
     /**
