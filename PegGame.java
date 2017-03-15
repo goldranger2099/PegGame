@@ -93,12 +93,6 @@ public class PegGame
     //Creates rules object.
     final Rules rules = new Rules();
     
-    //Easter egg: checks Konami code keyboard input
-    public boolean checkKonami()
-    {
-      return false;
-    }
-    
     /**
     * Listener class for buttons for choosing pegs on the board
     */
