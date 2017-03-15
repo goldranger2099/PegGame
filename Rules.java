@@ -7,7 +7,7 @@ public class Rules
     int counter = 0;
     for(int i = 0; i < board.getBoard().size(); i++)
     {
-      if(board.get(i).getValue() == 1)
+      if(board.getBoard().get(i).getValue() == 1)
       {
          counter++;
       }
