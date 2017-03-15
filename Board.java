@@ -8,9 +8,9 @@ public class Board
     /*
     Sets the X and Y of the Peg board as well as the beginning values.
     */
-    int posX;
-    int posY;
-    int value;
+    private int posX;
+    private int posY;
+    private int value;
     public Peg(int posX, int posY)
     {
       this.posX = posX;
