@@ -80,10 +80,12 @@ public class PegGame
     //Reset button
     JButton resetButton = new JButton("RESET");
     resetButton.setBackground(color.RED);
+    resetButton.setPreferredSize(500,50);
     
     //Creates title display area
     JLabel titleDisplayText = new JLabel("PEG GAME");
     JPanel titleDisplay = new JPanel();
+    titleDisplay.setPreferredSize(500,50);
     
     //Creates board object.
     final Board board = new Board();
