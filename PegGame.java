@@ -80,12 +80,12 @@ public class PegGame
     //Reset button
     JButton resetButton = new JButton("RESET");
     resetButton.setBackground(color.RED);
-    resetButton.setPreferredSize(500,50);
+    resetButton.setPreferredSize(new Dimension(500,50));
     
     //Creates title display area
     JLabel titleDisplayText = new JLabel("PEG GAME");
     JPanel titleDisplay = new JPanel();
-    titleDisplay.setPreferredSize(500,50);
+    titleDisplay.setPreferredSize(new Dimension(500,50));
     
     //Creates board object.
     final Board board = new Board();
@@ -168,9 +168,9 @@ public class PegGame
           button14.setEnabled(true);
           button15.setEnabled(true);
         }
-        if(rules.checkWinner(board) == true && rules.checkLoser(board) == 0)
+        if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
         {
-          titleDisplaytext.setText("YOU WIN!");
+          titleDisplayText.setText("YOU WIN!");
           button1.setEnabled(false);
           button2.setEnabled(false);
           button3.setEnabled(false);
@@ -189,7 +189,7 @@ public class PegGame
         }
         if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
         {
-          titleDisplaytext.setText("YOU LOST!");
+          titleDisplayText.setText("YOU LOST!");
           button1.setEnabled(false);
           button2.setEnabled(false);
           button3.setEnabled(false);
