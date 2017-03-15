@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Board
 {
-  ArrayList<Peg> board = new ArrayList<>();
+  private ArrayList<Peg> board = new ArrayList<>();
   class Peg
   {
     /*
