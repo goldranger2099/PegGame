@@ -71,9 +71,9 @@ public class Board
   Peg peg15 = new Peg(9, 1);
   board.add(peg15);
   //Sets ALL pegs to 1, which means the pegs are on the board.
-  for(int pegs: board)
+  for(int i = 0; i < board.getSize(); i++)
     {
-      pegs.setValue(1);
+      board.get(i).setValue(1);
     }
   }
   //Resets board completely.
@@ -85,7 +85,7 @@ public class Board
     }
   }
   //Changes a peg to zero, which means the peg is removed.
-  public void removePeg(peg)
+  public void removePeg(int peg)
   {
     if(peg > 0 && peg < 16)
     {
@@ -103,7 +103,7 @@ public class Board
     }
   }
   //Finds peg in given X and Y spot
-  public Peg getPeg(posX, posY)
+  public Peg getPeg(int posX, int posY)
   {
     for(int i = 0; i < board.size(); i++)
     {
