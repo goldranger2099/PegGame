@@ -195,7 +195,22 @@ public class PegGame
         }
         if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
         {
-          
+          titleDisplaytext.setText("YOU LOST!");
+          button1.setEnabled(false);
+          button2.setEnabled(false);
+          button3.setEnabled(false);
+          button4.setEnabled(false);
+          button5.setEnabled(false);
+          button6.setEnabled(false);
+          button7.setEnabled(false);
+          button8.setEnabled(false);
+          button9.setEnabled(false);
+          button10.setEnabled(false);
+          button11.setEnabled(false);
+          button12.setEnabled(false);
+          button13.setEnabled(false);
+          button14.setEnabled(false);
+          button15.setEnabled(false);
         }
         SwingUtilities.updateComponentTreeUI(boardFrame);
       }
