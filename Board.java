@@ -10,7 +10,7 @@ public class Board
     int posX;
     int posY;
     int value;
-    public Peg(posX, posY)
+    public Peg(int posX, int posY)
     {
       this.posX = posX;
       this.posY = posY;
@@ -36,6 +36,8 @@ public class Board
       return value;
     }
   }
+  public Board()
+  {
   //Creation of Pegs and sets them on board.
   ArrayList<Peg> board = new ArrayList<>();
   Peg peg1 = new Peg(5, 5);
@@ -70,8 +72,9 @@ public class Board
   board.add(peg15);
   //Sets ALL pegs to 1, which means the pegs are on the board.
   for(int pegs: board)
-  {
-    pegs.setValue(1);
+    {
+      pegs.setValue(1);
+    }
   }
   //Resets board completely.
   public void resetBoard()
