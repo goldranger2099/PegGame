@@ -112,7 +112,7 @@ public class Board
         return board.get(i);
       }
     }
-    return;
+    return null;
   }
   //Returns board
   public ArrayList getBoard()
