@@ -81,7 +81,7 @@ public class Board
     return null;
   }
   //Returns board
-  public ArrayList getBoard()
+  public ArrayList<Peg> getBoard()
   {
     return board;
   }
