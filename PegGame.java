@@ -79,7 +79,7 @@ public class PegGame
    
     //Reset button
     JButton resetButton = new JButton("RESET");
-    resetButton.setBackground(color.RED);
+    resetButton.setBackground(Color.RED);
     resetButton.setPreferredSize(new Dimension(500,50));
     
     //Creates title display area
