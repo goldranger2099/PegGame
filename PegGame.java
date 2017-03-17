@@ -11,25 +11,9 @@ public class PegGame
 {
   public static void main(String[] args)
   {
-    //Creates playing window, board, and board pyramid
+    //Creates playing window and board
     JFrame boardFrame = new JFrame("Peg Game");
     JPanel pegBoard = new JPanel();
-    GridLayout pyramid = new GridLayout(5, 1);
-    pegBoard.setLayout(pyramid);
-    JPanel level1 = new JPanel();
-    GridLayout onexone = new GridLayout(1, 1);
-    JPanel level2 = new JPanel();
-    GridLayout onextwo = new GridLayout(1, 2);
-    level2.setLayout(onextwo);
-    JPanel level3 = new JPanel();
-    GridLayout onexthree = new GridLayout(1, 3);
-    level3.setLayout(onexthree);
-    JPanel level4 = new JPanel();
-    GridLayout onexfour = new GridLayout(1, 4);
-    level4.setLayout(onexfour);
-    JPanel level5 = new JPanel();
-    GridLayout onexfive = new GridLayout(1, 5);
-    level5.setLayout(onexfive);
     
     //Creates buttons 1 - 15
     JButton button1 = new JButton("");
@@ -236,29 +220,10 @@ public class PegGame
     button14.addActionListener(boardListener);
     button15.addActionListener(boardListener);
     
-    //Adds buttons to levels
-    level1.add(button1).setLocation(1,1);
-    level2.add(button2).setLocation(1,1);
-    level2.add(button3).setLocation(1,2);
-    level3.add(button4).setLocation(1,1);
-    level3.add(button5).setLocation(1,2);
-    level3.add(button6).setLocation(1,3);
-    level4.add(button7).setLocation(1,1);
-    level4.add(button8).setLocation(1,2);
-    level4.add(button9).setLocation(1,3);
-    level4.add(button10).setLocation(1,4);
-    level5.add(button11).setLocation(1,1);
-    level5.add(button12).setLocation(1,2);
-    level5.add(button13).setLocation(1,3);
-    level5.add(button14).setLocation(1,4);
-    level5.add(button15).setLocation(1,5);
-    
     //Adds levels to peg board in pyramid formation
-    pegBoard.add(level1).setLocation(1,1).CENTER;
-    pegBoard.add(level2).setLocation(2,1);
-    pegBoard.add(level3).setLocation(3,1);
-    pegBoard.add(level4).setLocation(4,1);
-    pegBoard.add(level5).setLocation(5,1);
+    pegBoard.add(button1.setLocation(200, 0));
+    pegBoard.add(button2).setBounds(150, 100, 100, 100);
+    pegBoard.add(button3).setBounds(250, 100, 100, 100);
     
     //Adds titleText JLabel to titleDisplay JPanel
     titleDisplay.add(titleDisplayText);
