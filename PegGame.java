@@ -17,6 +17,7 @@ public class PegGame
     GridLayout pyramid = new GridLayout(5, 1);
     pegBoard.setLayout(pyramid);
     JPanel level1 = new JPanel();
+    GridLayout onexone = new GridLayout(1, 1);
     JPanel level2 = new JPanel();
     GridLayout onextwo = new GridLayout(1, 2);
     level2.setLayout(onextwo);
@@ -229,7 +230,7 @@ public class PegGame
     button15.addActionListener(boardListener);
     
     //Adds buttons to levels
-    level1.add(button1);
+    level1.add(button1).setLocation(1,1);
     level2.add(button2).setLocation(1,1);
     level2.add(button3).setLocation(1,2);
     level3.add(button4).setLocation(1,1);
