@@ -46,47 +46,47 @@ public class Rules
     }
   }
   //Checks to see whether a peg can move to a certain space or not.
-  public int canMove(Board board, int peg)
-  {
+   public int canMove(Board board, int peg)
+    {
     int counter = 0;
-    if(board.getPeg(board.getBoard().get(peg - 1).getPosX() + 2, board.getBoard().get(peg - 1).getPosY()).getValue == 1)
+    if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
     {
-      if(board.getPeg(board.getBoard().get(peg - 1).getPosX() + 4, board.getBoard().get(peg - 1).getPosY()).getValue == 0)
+      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
       {
         counter++;
       }
     }
-    else if(board.getPeg(board.getBoard().get(peg - 1).getPosX() - 2, board.getBoard().get(peg - 1).getPosY().getValue == 1))
+    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
     {
-      if(board.getPeg(board.getBoard().get(peg - 1).getPosX() - 4, board.getBoard().get(peg - 1).getPosY()).getValue == 0)
+    	if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
       {
         counter++;
       }
     }
-    else if(board.getPeg(board.getBoard().get(peg - 1).getPosX() - 1, board.getBoard().get(peg - 1).getPosY() - 1).getValue == 1)
+    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
     {
-      if(board.getPeg(board.getBoard().get(peg - 1).getPosX() - 2, board.getBoard().get(peg - 1).getPosY() - 2).getValue == 0)
+      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
       {
         counter++;
       }
     }
-    else if(board.getPeg(board.getBoard().get(peg - 1).getPosX() + 1, board.getBoard().get(peg - 1).getPosY() - 1).getValue == 1)
+    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
     {
-      if(board.getPeg(board.getBoard().get(peg - 1).getPosX() + 2, board.getBoard().get(peg - 1).getPosY() - 2).getValue == 0)
+      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
       {
         counter++;
       }
     }
-    else if(board.getPeg(board.getBoard().get(peg - 1).getPosX() - 1, board.getBoard().get(peg - 1).getPosY() + 1).getValue == 1)
+    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
     {
-      if(board.getPeg(board.getBoard().get(peg - 1).getPosX() - 2, board.getBoard().get(peg - 1).getPosY() + 2).getValue == 0)
+      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
       {
         counter++;
       }
     }
-    else if(board.getPeg(board.getBoard().get(peg - 1).getPosX() + 1, board.getBoard().get(peg - 1).getPosY() + 1).getValue == 1)
+    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
     {
-      if(board.getPeg(board.getBoard().get(peg - 1).getPosX() + 2, board.getBoard().get(peg - 1).getPosY() + 2).getValue == 0)
+      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
       {
         counter++;
       }
