@@ -30,7 +30,7 @@ public class PegGame
     GridLayout onexfive = new GridLayout(1, 5);
     level5.setLayout(onexfive);
     
-    //Buttons 1 - 15
+    //Creates buttons 1 - 15
     JButton button1 = new JButton("");
     button1.setPreferredSize(new Dimension(100,100));
     button1.setBackground(Color.BLACK);
@@ -77,7 +77,7 @@ public class PegGame
     button15.setPreferredSize(new Dimension(100,100));
     button15.setBackground(Color.BLACK);
    
-    //Reset button
+    //Creates reset button
     JButton resetButton = new JButton("RESET");
     resetButton.setBackground(Color.RED);
     resetButton.setPreferredSize(new Dimension(500,50));
@@ -246,11 +246,11 @@ public class PegGame
     level5.add(button15).setLocation(1,5);
     
     //Adds levels to peg board in pyramid formation
-    pegBoard.add(level1).setLocation(1,1);
+    pegBoard.add(level1).setLocation(1,1).CENTER;
     pegBoard.add(level2).setLocation(2,1);
     pegBoard.add(level3).setLocation(3,1);
     pegBoard.add(level4).setLocation(4,1);
-    pegBoard.add(level4).setLocation(5,1);
+    pegBoard.add(level5).setLocation(5,1);
     
     //Adds titleText JLabel to titleDisplay JPanel
     titleDisplay.add(titleDisplayText);
