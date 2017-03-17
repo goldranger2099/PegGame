@@ -107,6 +107,13 @@ public class PegGame
       {
         if (e.getSource() == button1)
         {
+          if(rules.canMove(board, 1) = 1)
+          {
+            
+          }
+          else if (rules.canMove(board, 1) > 1)
+          {
+          }
         }
         else if(e.getSource() == button2)
         {
