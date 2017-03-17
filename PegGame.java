@@ -12,8 +12,8 @@ public class PegGame
   public static void main(String[] args)
   {
     //Creates playing window, board, and board pyramid
-    JFrame boardFrame = new JFrame();
-    JFrame pegBoard = new JFrame();
+    JFrame boardFrame = new JFrame("Peg Game");
+    JPanel pegBoard = new JPanel();
     GridLayout pyramid = new GridLayout(5, 1);
     pegBoard.setLayout(pyramid);
     JPanel level1 = new JPanel();
