@@ -13,53 +13,39 @@ public class PegGame
   {
     //Creates playing window and board
     JFrame boardFrame = new JFrame("Peg Game");
+    boardFrame.setPreferredSize(new Dimension(500, 600);
     JPanel pegBoard = new JPanel();
     
     //Creates buttons 1 - 15
     JButton button1 = new JButton("");
-    button1.setPreferredSize(new Dimension(100,100));
     button1.setBackground(Color.BLACK);
     JButton button2 = new JButton("");
-    button2.setPreferredSize(new Dimension(100,100));
     button2.setBackground(Color.BLACK);
     JButton button3 = new JButton("");
-    button3.setPreferredSize(new Dimension(100,100));
     button3.setBackground(Color.BLACK);
     JButton button4 = new JButton("");
-    button4.setPreferredSize(new Dimension(100,100));
     button4.setBackground(Color.BLACK);
     JButton button5 = new JButton("");
-    button5.setPreferredSize(new Dimension(100,100));
     button5.setBackground(Color.BLACK);
     JButton button6 = new JButton("");
-    button6.setPreferredSize(new Dimension(100,100));
     button6.setBackground(Color.BLACK);
     JButton button7 = new JButton("");
-    button7.setPreferredSize(new Dimension(100,100));
     button7.setBackground(Color.BLACK);
     JButton button8 = new JButton("");
-    button8.setPreferredSize(new Dimension(100,100));
     button8.setBackground(Color.BLACK);
     JButton button9 = new JButton("");
-    button9.setPreferredSize(new Dimension(100,100));
     button9.setBackground(Color.BLACK);
     JButton button10 = new JButton("");
-    button10.setPreferredSize(new Dimension(100,100));
     button10.setBackground(Color.BLACK);
     JButton button11 = new JButton("");
-    button11.setPreferredSize(new Dimension(100,100));
     button11.setBackground(Color.BLACK);
     JButton button12 = new JButton("");
-    button12.setPreferredSize(new Dimension(100,100));
     button12.setBackground(Color.BLACK);
     JButton button13 = new JButton("");
-    button13.setPreferredSize(new Dimension(100,100));
     button13.setBackground(Color.BLACK);
     JButton button14 = new JButton("");
-    button14.setPreferredSize(new Dimension(100,100));
     button14.setBackground(Color.BLACK);
     JButton button15 = new JButton("");
-    button15.setPreferredSize(new Dimension(100,100));
     button15.setBackground(Color.BLACK);
    
     //Creates reset button
@@ -221,9 +207,51 @@ public class PegGame
     button15.addActionListener(boardListener);
     
     //Adds levels to peg board in pyramid formation
-    pegBoard.add(button1.setLocation(200, 0));
-    pegBoard.add(button2).setBounds(150, 100, 100, 100);
-    pegBoard.add(button3).setBounds(250, 100, 100, 100);
+    pegBoard.add(button1);
+    button1.setSize(100,100);
+    button1.setLocation(200, 0);
+    pegBoard.add(button2);
+    button2.setSize(100,100);
+    button2.setLocation(150, 100);
+    pegBoard.add(button3);
+    button3.setSize(100,100);
+    button3.setLocation(250, 100);
+    pegBoard.add(button4);
+    button4.setSize(100,100);
+    button4.setLocation(100, 200);
+    pegBoard.add(button5);
+    button5.setSize(100,100);
+    button5.setLocation(200, 200);
+    pegBoard.add(button6);
+    button6.setSize(100,100);
+    button6.setLocation(300, 200);
+    pegBoard.add(button7);
+    button7.setSize(100,100);
+    button7.setLocation(50, 300);
+    pegBoard.add(button8);
+    button8.setSize(100,100);
+    button8.setLocation(150, 300);
+    pegBoard.add(button9);
+    button9.setSize(100,100);
+    button9.setLocation(250, 300);
+    pegBoard.add(button10);
+    button10.setSize(100,100);
+    button10.setLocation(350, 300);
+    pegBoard.add(button11);
+    button11.setSize(100,100);
+    button11.setLocation(0, 400);
+    pegBoard.add(button12);
+    button12.setSize(100,100);
+    button12.setLocation(100, 400);
+    pegBoard.add(button13);
+    button13.setSize(100,100);
+    button13.setLocation(200, 400);                            
+    pegBoard.add(button14);
+    button14.setSize(100,100);
+    button14.setLocation(300, 400);
+    pegBoard.add(button15);
+    button15.setSize(100,100);
+    button15.setLocation(400, 400);                            
     
     //Adds titleText JLabel to titleDisplay JPanel
     titleDisplay.add(titleDisplayText);
