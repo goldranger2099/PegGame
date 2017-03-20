@@ -13,7 +13,7 @@ public class PegGame
   {
     //Creates playing window and board
     JFrame boardFrame = new JFrame("Peg Game");
-    boardFrame.setPreferredSize(new Dimension(500, 600));
+    boardFrame.setPreferredSize(new Dimension(500, 625));
     JPanel pegBoard = new JPanel();
     pegBoard.setLayout(null);
     
