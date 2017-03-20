@@ -13,8 +13,9 @@ public class PegGame
   {
     //Creates playing window and board
     JFrame boardFrame = new JFrame("Peg Game");
-    boardFrame.setPreferredSize(new Dimension(500, 600);
+    boardFrame.setPreferredSize(new Dimension(500, 600));
     JPanel pegBoard = new JPanel();
+    pegBoard.setLayout(null);
     
     //Creates buttons 1 - 15
     JButton button1 = new JButton("");
@@ -77,11 +78,11 @@ public class PegGame
       {
         if (e.getSource() == button1)
         {
-          if(rules.canMove(board, 1) = 1)
+          //if(rules.canMove(board, 1) = 1)
           {
             
           }
-          else if (rules.canMove(board, 1) > 1)
+          //else if (rules.canMove(board, 1) > 1)
           {
           }
         }
