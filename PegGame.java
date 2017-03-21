@@ -70,122 +70,318 @@ public class PegGame
     */
     class ClickListener implements ActionListener
     {
-      /**
+       /**
        * Button listener method to check button clicks.
        * @param e Button clicked
        */
-      public void actionPerformed(ActionEvent e)
-      {
-        if (e.getSource() == button1)
-        {
-          if(rules.canMove(board, 1) == 1)
+       public void actionPerformed(ActionEvent e)
+       {
+          boolean firstTurn = true;
+          if(firstTurn = true)
           {
-            
+            if (e.getSource() == button1)
+            {
+                board.removePeg(1);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button2)
+            {
+                board.removePeg(2);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button3)
+            {
+                board.removePeg(3);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button4)
+            {
+                board.removePeg(4);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button5)
+            {
+                board.removePeg(5);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button6)
+            {
+                board.removePeg(6);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button7)
+            {
+                board.removePeg(7);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button8)
+            {
+                board.removePeg(8);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button9)
+            {
+                board.removePeg(9);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button10)
+            {
+                board.removePeg(10);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button11)
+            {
+                board.removePeg(11);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button12)
+            {
+                board.removePeg(12);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button13)
+            {
+                board.removePeg(13);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button14)
+            {
+                board.removePeg(14);
+                firstTurn = false;
+            }
+            else if (e.getSource() == button15)
+            {
+                board.removePeg(15);
+                firstTurn = false;
+            }
           }
-          else if (rules.canMove(board, 1) > 1)
-          {
-          }
-        }
-        else if(e.getSource() == button2)
+       else
         {
-        }
-        else if(e.getSource() == button3)
-        {
-        }
-        else if(e.getSource() == button4)
-        {
-        }
-        else if(e.getSource() == button5)
-        {
-        }
-        else if(e.getSource() == button6)
-        {
-        }
-        else if(e.getSource() == button7)
-        {
-        }
-        else if(e.getSource() == button8)
-        {
-        }
-        else if(e.getSource() == button9)
-        {
-        }
-        else if(e.getSource() == button10)
-        {
-        }
-        else if(e.getSource() == button11)
-        {
-        }
-        else if(e.getSource() == button12)
-        {
-        }
-        else if(e.getSource() == button13)
-        {
-        }
-        else if(e.getSource() == button14)
-        {
-        }
-        else if(e.getSource() == button15)
-        {
-        }
-        else if (e.getSource() == resetButton)
-        {
-          board.resetBoard();
-          button1.setEnabled(true);
-          button2.setEnabled(true);
-          button3.setEnabled(true);
-          button4.setEnabled(true);
-          button5.setEnabled(true);
-          button6.setEnabled(true);
-          button7.setEnabled(true);
-          button8.setEnabled(true);
-          button9.setEnabled(true);
-          button10.setEnabled(true);
-          button11.setEnabled(true);
-          button12.setEnabled(true);
-          button13.setEnabled(true);
-          button14.setEnabled(true);
-          button15.setEnabled(true);
-        }
-        if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
-        {
-          titleDisplayText.setText("YOU WIN!");
-          button1.setEnabled(false);
-          button2.setEnabled(false);
-          button3.setEnabled(false);
-          button4.setEnabled(false);
-          button5.setEnabled(false);
-          button6.setEnabled(false);
-          button7.setEnabled(false);
-          button8.setEnabled(false);
-          button9.setEnabled(false);
-          button10.setEnabled(false);
-          button11.setEnabled(false);
-          button12.setEnabled(false);
-          button13.setEnabled(false);
-          button14.setEnabled(false);
-          button15.setEnabled(false);
-        }
-        if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
-        {
-          titleDisplayText.setText("YOU LOST!");
-          button1.setEnabled(false);
-          button2.setEnabled(false);
-          button3.setEnabled(false);
-          button4.setEnabled(false);
-          button5.setEnabled(false);
-          button6.setEnabled(false);
-          button7.setEnabled(false);
-          button8.setEnabled(false);
-          button9.setEnabled(false);
-          button10.setEnabled(false);
-          button11.setEnabled(false);
-          button12.setEnabled(false);
-          button13.setEnabled(false);
-          button14.setEnabled(false);
-          button15.setEnabled(false);
-        }
-        SwingUtilities.updateComponentTreeUI(boardFrame);
+            if (e.getSource() == button1)
+            {
+              if(rules.canMove(board, 1) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 1);
+                  board.movePeg(1, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }
+            }
+            else if(e.getSource() == button2)
+            {
+              if(rules.canMove(board, 2) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 2);
+                  board.movePeg(2, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button3)
+            {
+              if(rules.canMove(board, 3) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 3);
+                  board.movePeg(3, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button4)
+            {
+              if(rules.canMove(board, 4) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 4);
+                  board.movePeg(4, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button5)
+            {
+              if(rules.canMove(board, 5) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 5);
+                  board.movePeg(5, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button6)
+            {
+              if(rules.canMove(board, 6) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 6);
+                  board.movePeg(6, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button7)
+            {
+              if(rules.canMove(board, 7) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 7);
+                  board.movePeg(7, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button8)
+            {
+              if(rules.canMove(board, 8) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 8);
+                  board.movePeg(8, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button9)
+            {
+              if(rules.canMove(board, 9) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 9);
+                  board.movePeg(9, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button10)
+            {
+              if(rules.canMove(board, 10) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 10);
+                  board.movePeg(10, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button11)
+            {
+              if(rules.canMove(board, 11) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 11);
+                  board.movePeg(11, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button12)
+            {
+              if(rules.canMove(board, 12) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 12);
+                  board.movePeg(12, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button13)
+            {
+              if(rules.canMove(board, 13) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 13);
+                  board.movePeg(13, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if(e.getSource() == button14)
+            {
+              if(rules.canMove(board, 14) == 1)
+              {
+                  int[] posXY = rules.findOneMove(board, 14);
+                  board.movePeg(14, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }
+            }
+            else if(e.getSource() == button15)
+            {
+              if(rules.canMove(board, 1) == 15)
+              {
+                  int[] posXY = rules.findOneMove(board, 15);
+                  board.movePeg(15, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
+              }
+              else if (rules.canMove(board, 1) > 1)
+              {
+              }    
+            }
+            else if (e.getSource() == resetButton)
+            {
+              board.resetBoard();
+              button1.setEnabled(true);
+              button2.setEnabled(true);
+              button3.setEnabled(true);
+              button4.setEnabled(true);
+              button5.setEnabled(true);
+              button6.setEnabled(true);
+              button7.setEnabled(true);
+              button8.setEnabled(true);
+              button9.setEnabled(true);
+              button10.setEnabled(true);
+              button11.setEnabled(true);
+              button12.setEnabled(true);
+              button13.setEnabled(true);
+              button14.setEnabled(true);
+              button15.setEnabled(true);
+              firstTurn = true;
+            }
+            if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
+            {
+              titleDisplayText.setText("YOU WIN!");
+              button1.setEnabled(false);
+              button2.setEnabled(false);
+              button3.setEnabled(false);
+              button4.setEnabled(false);
+              button5.setEnabled(false);
+              button6.setEnabled(false);
+              button7.setEnabled(false);
+              button8.setEnabled(false);
+              button9.setEnabled(false);
+              button10.setEnabled(false);
+              button11.setEnabled(false);
+              button12.setEnabled(false);
+              button13.setEnabled(false);
+              button14.setEnabled(false);
+              button15.setEnabled(false);
+            }
+            if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
+            {
+              titleDisplayText.setText("YOU LOST!");
+              button1.setEnabled(false);
+              button2.setEnabled(false);
+              button3.setEnabled(false);
+              button4.setEnabled(false);
+              button5.setEnabled(false);
+              button6.setEnabled(false);
+              button7.setEnabled(false);
+              button8.setEnabled(false);
+              button9.setEnabled(false);
+              button10.setEnabled(false);
+              button11.setEnabled(false);
+              button12.setEnabled(false);
+              button13.setEnabled(false);
+              button14.setEnabled(false);
+              button15.setEnabled(false);
+            }
+       }
+       SwingUtilities.updateComponentTreeUI(boardFrame);
       }
     }
     
