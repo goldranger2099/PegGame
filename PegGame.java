@@ -22,9 +22,8 @@ public class PegGame
       }
       catch (IOException e) {}
     Image background = backgroundImage;
-    //ImageIcon backgroundIcon = new ImageIcon(background);
-    //boardFrame.add(new JLabel(backgroundIcon));
-    boardFrame.add(background);
+    ImageIcon backgroundIcon = new ImageIcon(background);
+    boardFrame.add(new JLabel(backgroundIcon));
     
     JPanel pegBoard = new JPanel();
     pegBoard.setLayout(null);
