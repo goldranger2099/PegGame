@@ -483,5 +483,6 @@ public class PegGame
     boardFrame.pack();
     boardFrame.setResizable(false);
     boardFrame.setVisible(true);
+    boardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
 }
