@@ -12,18 +12,23 @@ public class PegGame
   public static void main(String[] args)
   {
     //Creates playing window and board
-    JFrame boardFrame = new JFrame("Peg Game");
-    boardFrame.setPreferredSize(new Dimension(500, 625));
-    
-    BufferedImage backgroundImage = null;
+    class DrawingFrame extends JFrame
+    {
+    private BufferedImage backgroundImage = null;
       try {
           URL url1 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
           backgroundImage = ImageIO.read(url1);
       }
       catch (IOException e) {}
-    Image background = backgroundImage;
-    ImageIcon backgroundIcon = new ImageIcon(background);
-    boardFrame.add(new JLabel(backgroundIcon));
+      final Image background = backgroundImage;
+      public void paintComponent(Graphics g)
+      {
+        g.drawImage(background, 0, 0, null);
+      }
+    }
+    DrawingFrame boardFrame = new DrawingFrame("Peg Game");
+    boardFrame.setPreferredSize(new Dimension(500, 625));
+    boardFrame.paint();
     
     JPanel pegBoard = new JPanel();
     pegBoard.setLayout(null);
@@ -470,16 +475,9 @@ public class PegGame
     resetButton.addActionListener(boardListener);
     
     //Adds peg board to window and makes window visible
-    boardFrame.setLayout(null);
-    boardFrame.add(new JLabel(backgroundIcon));
-    boardFrame.add(titleDisplay);
-    titleDisplay.setSize(500,50);
-    titleDisplay.setLocation(0, 0);
-    boardFrame.add(pegBoard);
-    pegBoard.setLocation(0, 50);
-    boardFrame.add(resetButton);
-    titleDisplay.setSize(500,50);
-    resetButton.setLocation(0, 550);
+    boardFrame.add(titleDisplay, BorderLayout.NORTH);
+    boardFrame.add(pegBoard, BorderLayout.CENTER);
+    boardFrame.add(resetButton, BorderLayout.SOUTH);
     boardFrame.pack();
     boardFrame.setResizable(false);
     boardFrame.setVisible(true);
