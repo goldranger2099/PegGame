@@ -471,11 +471,14 @@ public class PegGame
     
     //Adds peg board to window and makes window visible
     boardFrame.setLayout(null);
-    boardFrame.add(titleDisplay)
+    boardFrame.add(new JLabel(backgroundIcon));
+    boardFrame.add(titleDisplay);
+    titleDisplay.setSize(500,50);
     titleDisplay.setLocation(0, 0);
     boardFrame.add(pegBoard);
     pegBoard.setLocation(0, 50);
     boardFrame.add(resetButton);
+    titleDisplay.setSize(500,50);
     resetButton.setLocation(0, 550);
     boardFrame.pack();
     boardFrame.setResizable(false);
