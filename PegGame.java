@@ -22,8 +22,9 @@ public class PegGame
       }
       catch (IOException e) {}
     Image background = backgroundImage;
-    ImageIcon backgroundIcon = new ImageIcon(background);
-    boardFrame.add(new JLabel(backgroundIcon));
+    //ImageIcon backgroundIcon = new ImageIcon(background);
+    //boardFrame.add(new JLabel(backgroundIcon));
+    boardFrame.add(background);
     
     JPanel pegBoard = new JPanel();
     pegBoard.setLayout(null);
@@ -470,10 +471,13 @@ public class PegGame
     resetButton.addActionListener(boardListener);
     
     //Adds peg board to window and makes window visible
-    boardFrame.setLayout(new BorderLayout());
-    boardFrame.add(titleDisplay, BorderLayout.NORTH);
-    boardFrame.add(pegBoard, BorderLayout.CENTER);
-    boardFrame.add(resetButton, BorderLayout.SOUTH);
+    boardFrame.setLayout(null);
+    boardFrame.add(titleDisplay)
+    titleDisplay.setLocation(0, 0);
+    boardFrame.add(pegBoard);
+    pegBoard.setLocation(0, 50);
+    boardFrame.add(resetButton);
+    resetButton.setLocation(0, 550);
     boardFrame.pack();
     boardFrame.setResizable(false);
     boardFrame.setVisible(true);
