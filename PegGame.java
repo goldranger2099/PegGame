@@ -133,7 +133,7 @@ public class PegGame
        public void actionPerformed(ActionEvent e)
        {
           boolean firstTurn = true;
-          if(firstTurn = true)
+          if(firstTurn == true)
           {
             titleDisplayText.setText("REMOVE A PEG");
             if (e.getSource() == button1)
