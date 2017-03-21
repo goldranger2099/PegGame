@@ -56,7 +56,7 @@ public class PegGame
     resetButton.setIcon(resetIcon);
     
     //Creates title display area
-    JLabel titleDisplayText = new JLabel("Peg Game");
+    JLabel titleDisplayText = new JLabel("REMOVE A PEG");
     JPanel titleDisplay = new JPanel();
     titleDisplay.setLayout(null);
     titleDisplay.setPreferredSize(new Dimension(500,50));
