@@ -1,3 +1,7 @@
+/*
+ * 
+ */
+
 import java.util.ArrayList;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,27 +15,73 @@ public class PegGame
 {
   public static void main(String[] args)
   {
-    //Creates playing window and board
-    class DrawingFrame extends JFrame
-    {
-    private BufferedImage backgroundImage = null;
-      try {
-          URL url1 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
-          backgroundImage = ImageIO.read(url1);
-      }
-      catch (IOException e) {}
-      final Image background = backgroundImage;
-      public void paintComponent(Graphics g)
-      {
-        g.drawImage(background, 0, 0, null);
-      }
-    }
-    DrawingFrame boardFrame = new DrawingFrame("Peg Game");
+    //Creates playing board and window
+    JFrame boardFrame = new JFrame("Peg Game");
     boardFrame.setPreferredSize(new Dimension(500, 625));
-    boardFrame.paint();
-    
     JPanel pegBoard = new JPanel();
     pegBoard.setLayout(null);
+    
+    //Gets board background image from URL
+    BufferedImage background = null;
+    try
+    {
+        URL url1 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
+        background = ImageIO.read(url1);
+    }
+    catch (IOException e) {}
+    final Image backgroundImage = background;
+    JLabel backgroundLabel = new JLabel(new ImageIcon(backgroundImage));
+    
+    //Adds background image to pegBoard
+    pegBoard.add(backgroundLabel);
+    backgroundLabel.setSize(500,500);
+    backgroundLabel.setLocation(0,0);
+    
+    //Creates reset button
+    JButton resetButton = new JButton();
+    resetButton.setPreferredSize(new Dimension(500,50));
+    
+    //Gets reset button background image from URL
+    BufferedImage reset = null;
+    try
+    {
+        URL url2 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
+        reset = ImageIO.read(url2);
+    }
+    catch (IOException e) {}
+    final Image resetImage = reset.getSubimage(0, 550, 500, 50); 
+    ImageIcon resetIcon = new ImageIcon(resetImage);
+    
+    //Adds reset image to resetButton
+    resetButton.setIcon(resetIcon);
+    
+    //Creates title display area
+    JLabel titleDisplayText = new JLabel("Peg Game");
+    JPanel titleDisplay = new JPanel();
+    titleDisplay.setLayout(null);
+    titleDisplay.setPreferredSize(new Dimension(500,50));
+    
+    //Gets title background image from URL
+    BufferedImage title = null;
+    try
+    {
+        URL url3 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
+        title = ImageIO.read(url3);
+    }
+    catch (IOException e) {}
+    final Image titleImage = title.getSubimage(0, 0, 500, 50); 
+    JLabel titleLabel = new JLabel(new ImageIcon(titleImage));
+    
+    //Adds titleText JLabel to titleDisplay JPanel
+    titleDisplay.add(titleDisplayText);
+    titleDisplayText.setSize(500,50);
+    titleDisplayText.setHorizontalAlignment(JLabel.CENTER);
+    titleDisplayText.setVerticalAlignment(JLabel.CENTER);
+    
+    //Adds title background image to titleDisplay
+    titleDisplay.add(titleLabel);
+    titleLabel.setSize(500,50);
+    titleLabel.setLocation(0,0);
     
     //Creates buttons 1 - 15
     JButton button1 = new JButton("");
@@ -64,16 +114,6 @@ public class PegGame
     button14.setBackground(Color.BLACK);
     JButton button15 = new JButton("");
     button15.setBackground(Color.BLACK);
-   
-    //Creates reset button
-    JButton resetButton = new JButton("RESET");
-    resetButton.setBackground(Color.RED);
-    resetButton.setPreferredSize(new Dimension(500,50));
-    
-    //Creates title display area
-    JLabel titleDisplayText = new JLabel("PEG GAME");
-    JPanel titleDisplay = new JPanel();
-    titleDisplay.setPreferredSize(new Dimension(500,50));
     
     //Creates board object.
     final Board board = new Board();
@@ -173,7 +213,7 @@ public class PegGame
             }
           }
          //How are we going to check when the pegs have more than one options?
-       else
+        else
         {
             if (e.getSource() == button1)
             {
@@ -466,11 +506,8 @@ public class PegGame
     button14.setLocation(300, 400);
     pegBoard.add(button15);
     button15.setSize(100,100);
-    button15.setLocation(400, 400);                            
+    button15.setLocation(400, 400);
     
-    //Adds titleText JLabel to titleDisplay JPanel
-    titleDisplay.add(titleDisplayText);
-      
     //Adds listener to reset button
     resetButton.addActionListener(boardListener);
     
