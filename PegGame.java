@@ -1,4 +1,4 @@
-/*
+/**
  * 
  */
 
@@ -83,36 +83,68 @@ public class PegGame
     titleLabel.setSize(500,50);
     titleLabel.setLocation(0,0);
     
+    //Gets transparent button image from URL
+    BufferedImage clear = null;
+    try
+    {
+        URL url4 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/100x100%20blank.png");
+        clear = ImageIO.read(url4);
+    }
+    catch (IOException e) {}
+    final Image clearImage = clear;
+    ImageIcon clearIcon = new ImageIcon(clearImage);
+    
+    //Gets peg button image from URL
+    BufferedImage peg = null;
+    try
+    {
+        URL url5 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/Peg%20but%20it's%20100x100.png");
+        peg = ImageIO.read(url5);
+    }
+    catch (IOException e) {}
+    final Image pegImage = peg;
+    ImageIcon pegIcon = new ImageIcon(pegImage);
+    
     //Creates buttons 1 - 15
-    JButton button1 = new JButton("");
-    button1.setBackground(Color.BLACK);
-    JButton button2 = new JButton("");
+    
+    JButton button1 = new JButton(pegIcon);
+    //button1.setOpaque(true);
+    //button1.setContentAreaFilled(true);
+    //button1.setFocusPainted(false); 
+    //button1.setBorderPainted(false);
+    //button1.setIcon(pegIcon);
+    //button1.setBorderPainted(false);
+    //button1.setFocusPainted(false); 
+    //button1.setBackground(null);
+    
+    
+    JButton button2 = new JButton();
     button2.setBackground(Color.BLACK);
-    JButton button3 = new JButton("");
+    JButton button3 = new JButton();
     button3.setBackground(Color.BLACK);
-    JButton button4 = new JButton("");
+    JButton button4 = new JButton();
     button4.setBackground(Color.BLACK);
-    JButton button5 = new JButton("");
+    JButton button5 = new JButton();
     button5.setBackground(Color.BLACK);
-    JButton button6 = new JButton("");
+    JButton button6 = new JButton();
     button6.setBackground(Color.BLACK);
-    JButton button7 = new JButton("");
+    JButton button7 = new JButton();
     button7.setBackground(Color.BLACK);
-    JButton button8 = new JButton("");
+    JButton button8 = new JButton();
     button8.setBackground(Color.BLACK);
-    JButton button9 = new JButton("");
+    JButton button9 = new JButton();
     button9.setBackground(Color.BLACK);
-    JButton button10 = new JButton("");
+    JButton button10 = new JButton();
     button10.setBackground(Color.BLACK);
-    JButton button11 = new JButton("");
+    JButton button11 = new JButton();
     button11.setBackground(Color.BLACK);
-    JButton button12 = new JButton("");
+    JButton button12 = new JButton();
     button12.setBackground(Color.BLACK);
-    JButton button13 = new JButton("");
+    JButton button13 = new JButton();
     button13.setBackground(Color.BLACK);
-    JButton button14 = new JButton("");
+    JButton button14 = new JButton();
     button14.setBackground(Color.BLACK);
-    JButton button15 = new JButton("");
+    JButton button15 = new JButton();
     button15.setBackground(Color.BLACK);
     
     //Creates board object.
