@@ -110,37 +110,42 @@ public class Rules
     {
         if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
       {
-        counter++;
+        endPegPosXY[0] = board.getBoard().get(peg - 1).getPosX() - 4;
+        endPegPosXY[1] = board.getBoard().get(peg - 1).getPosY();
       }
     }
     else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
     {
       if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
       {
-        counter++;
+        endPegPosXY[0] = board.getBoard().get(peg - 1).getPosX() - 2;
+        endPegPosXY[1] = board.getBoard().get(peg - 1).getPosY() - 2;
       }
     }
     else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
     {
       if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
       {
-        counter++;
+        endPegPosXY[0] = board.getBoard().get(peg - 1).getPosX() + 2;
+        endPegPosXY[1] = board.getBoard().get(peg - 1).getPosY() - 2;
       }
     }
     else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
     {
       if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
       {
-        counter++;
+        endPegPosXY[0] = board.getBoard().get(peg - 1).getPosX() - 2;
+        endPegPosXY[1] = board.getBoard().get(peg - 1).getPosY() + 2;
       }
     }
     else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
     {
       if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
       {
-        counter++;
+        endPegPosXY[0] = board.getBoard().get(peg - 1).getPosX() + 2;
+        endPegPosXY[1] = board.getBoard().get(peg - 1).getPosY() + 2;
       }
     }
-    return endPegPosXY = new int[2];
+    return endPegPosXY;
   }
 }
