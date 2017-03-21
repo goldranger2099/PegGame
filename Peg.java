@@ -6,10 +6,12 @@ public class Peg
     private int posX;
     private int posY;
     private int value;
-    public Peg(int posX, int posY)
+    private int pegNum;
+    public Peg(int posX, int posY, int pegNum)
     {
       this.posX = posX;
       this.posY = posY;
+      this.pegNum = pegNum;
     }
     //Returns X
     public int getPosX()
@@ -30,5 +32,10 @@ public class Peg
     public int getValue()
     {
       return value;
+    }
+    
+    public int getNum()
+    {
+      return pegNum;
     }
   }
