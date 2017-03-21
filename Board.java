@@ -6,35 +6,35 @@ public class Board
   public Board()
   {
     //Creation of Pegs and sets them on board.
-    Peg peg1 = new Peg(5, 5);
+    Peg peg1 = new Peg(5, 5, 1);
     board.add(peg1);
-    Peg peg2 = new Peg(4, 4);
+    Peg peg2 = new Peg(4, 4, 2);
     board.add(peg2);
-    Peg peg3 = new Peg(6, 4);
+    Peg peg3 = new Peg(6, 4, 3);
     board.add(peg3);
-    Peg peg4 = new Peg(3, 3);
+    Peg peg4 = new Peg(3, 3, 4);
     board.add(peg4);
-    Peg peg5 = new Peg(5, 3);
+    Peg peg5 = new Peg(5, 3, 5);
     board.add(peg5);
-    Peg peg6 = new Peg(7, 3);
+    Peg peg6 = new Peg(7, 3, 6);
     board.add(peg6);
-    Peg peg7 = new Peg(2, 2);
+    Peg peg7 = new Peg(2, 2, 7);
     board.add(peg7);
-    Peg peg8 = new Peg(4, 2);
+    Peg peg8 = new Peg(4, 2, 8);
     board.add(peg8);
-    Peg peg9 = new Peg(6, 2);
+    Peg peg9 = new Peg(6, 2, 9);
     board.add(peg9);
-    Peg peg10 = new Peg(8, 2);
+    Peg peg10 = new Peg(8, 2, 10);
     board.add(peg10);
-    Peg peg11 = new Peg(1, 1);
+    Peg peg11 = new Peg(1, 1, 11);
     board.add(peg11);
-    Peg peg12 = new Peg(3, 1);
+    Peg peg12 = new Peg(3, 1, 12);
     board.add(peg12);
-    Peg peg13 = new Peg(5, 1);
+    Peg peg13 = new Peg(5, 1, 13);
     board.add(peg13);
-    Peg peg14 = new Peg(7, 1);
+    Peg peg14 = new Peg(7, 1, 14);
     board.add(peg14);
-    Peg peg15 = new Peg(9, 1);
+    Peg peg15 = new Peg(9, 1, 15);
     board.add(peg15);
     //Sets ALL pegs to 1, which means the pegs are on the board.
     for(int i = 0; i < board.size(); i++)
