@@ -79,6 +79,7 @@ public class PegGame
           boolean firstTurn = true;
           if(firstTurn = true)
           {
+            titleDisplayText.setText("REMOVE A PEG");
             if (e.getSource() == button1)
             {
                 board.removePeg(1);
