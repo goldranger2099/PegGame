@@ -155,6 +155,7 @@ public class PegGame
                 firstTurn = false;
             }
           }
+         //How are we going to check when the pegs have more than one options?
        else
         {
             if (e.getSource() == button1)
