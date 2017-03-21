@@ -14,6 +14,16 @@ public class PegGame
     //Creates playing window and board
     JFrame boardFrame = new JFrame("Peg Game");
     boardFrame.setPreferredSize(new Dimension(500, 625));
+    
+    BufferedImage backgroundImage = null;
+      try {
+          URL url1 = new URL("https://d2d00szk9na1qq.cloudfront.net/Product/5b893548-ca83-4d61-9df1-4ad8742f2642/Images/Large_0391296.jpg");
+          backgroundImage = ImageIO.read(url1);
+      }
+      catch (IOException e) {}
+    Image background = backgroundImage;
+    boardFrame.setBackground(background);
+    
     JPanel pegBoard = new JPanel();
     pegBoard.setLayout(null);
     
