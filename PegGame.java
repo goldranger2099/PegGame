@@ -470,6 +470,7 @@ public class PegGame
     resetButton.addActionListener(boardListener);
     
     //Adds peg board to window and makes window visible
+    boardFrame.setLayout(new BorderLayout());
     boardFrame.add(titleDisplay, BorderLayout.NORTH);
     boardFrame.add(pegBoard, BorderLayout.CENTER);
     boardFrame.add(resetButton, BorderLayout.SOUTH);
