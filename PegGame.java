@@ -398,6 +398,7 @@ public class PegGame
               button13.setEnabled(true);
               button14.setEnabled(true);
               button15.setEnabled(true);
+              titleDisplayText.setText("REMOVE A PEG");
               firstTurn = true;
             }
             if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
