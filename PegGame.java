@@ -108,16 +108,15 @@ public class PegGame
     ImageIcon pegIcon = new ImageIcon(pegImage);
     
     //Gets X image from URL
-    /*BufferedImage redX = null;
+    BufferedImage redX = null;
     try
     {
-        URL url6 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/Peg%20but%20it's%20100x100.png");
+        URL url6 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/X.png");
         redX = ImageIO.read(url6);
     }
     catch (IOException e) {}
     final Image redXImage = redX;
     ImageIcon redXIcon = new ImageIcon(redXImage);
-    */
    
     //Creates buttons 1 - 15
     
@@ -633,22 +632,11 @@ public class PegGame
             else if (e.getSource() == resetButton)
             {
               board.resetBoard();
-              button1.setEnabled(true);
-              button2.setEnabled(true);
-              button3.setEnabled(true);
-              button4.setEnabled(true);
-              button5.setEnabled(true);
-              button6.setEnabled(true);
-              button7.setEnabled(true);
-              button8.setEnabled(true);
-              button9.setEnabled(true);
-              button10.setEnabled(true);
-              button11.setEnabled(true);
-              button12.setEnabled(true);
-              button13.setEnabled(true);
-              button14.setEnabled(true);
-              button15.setEnabled(true);
               titleDisplayText.setText("REMOVE A PEG");
+              for(int i = 0; i < buttons.size(); i++)
+              {
+                  buttons.get(i).setEnabled(true);
+              }
               firstTurn = true;
             }
             
@@ -656,42 +644,20 @@ public class PegGame
             if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
             {
               titleDisplayText.setText("YOU WIN!");
-              button1.setEnabled(false);
-              button2.setEnabled(false);
-              button3.setEnabled(false);
-              button4.setEnabled(false);
-              button5.setEnabled(false);
-              button6.setEnabled(false);
-              button7.setEnabled(false);
-              button8.setEnabled(false);
-              button9.setEnabled(false);
-              button10.setEnabled(false);
-              button11.setEnabled(false);
-              button12.setEnabled(false);
-              button13.setEnabled(false);
-              button14.setEnabled(false);
-              button15.setEnabled(false);
+              for(int i = 0; i < buttons.size(); i++)
+              {
+                  buttons.get(i).setEnabled(false);
+              }
             }
             
             //Checks if player has lost the game
             if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
             {
               titleDisplayText.setText("YOU LOST!");
-              button1.setEnabled(false);
-              button2.setEnabled(false);
-              button3.setEnabled(false);
-              button4.setEnabled(false);
-              button5.setEnabled(false);
-              button6.setEnabled(false);
-              button7.setEnabled(false);
-              button8.setEnabled(false);
-              button9.setEnabled(false);
-              button10.setEnabled(false);
-              button11.setEnabled(false);
-              button12.setEnabled(false);
-              button13.setEnabled(false);
-              button14.setEnabled(false);
-              button15.setEnabled(false);
+              for(int i = 0; i < buttons.size(); i++)
+              {
+                  buttons.get(i).setEnabled(false);
+              }
             }
           }
           SwingUtilities.updateComponentTreeUI(boardFrame);
