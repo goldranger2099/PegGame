@@ -5,7 +5,9 @@ public class Board
   private ArrayList<Peg> board = new ArrayList<>();
   public Board()
   {
-    //Creation of Pegs and sets them on board.
+    /**
+    * Creation of Pegs and sets them on board.
+    **/
     Peg peg1 = new Peg(5, 5, 1);
     board.add(peg1);
     Peg peg2 = new Peg(4, 4, 2);
@@ -36,13 +38,17 @@ public class Board
     board.add(peg14);
     Peg peg15 = new Peg(9, 1, 15);
     board.add(peg15);
-    //Sets ALL pegs to 1, which means the pegs are on the board.
+    /**
+    * Sets ALL pegs to 1, which means the pegs are on the board.
+    **/
     for(int i = 0; i < board.size(); i++)
     {
       board.get(i).setValue(1);
     }
   }
-  //Resets board completely.
+  /**
+  *   Resets board completely.
+  **/
   public void resetBoard()
   {
     for(int i = 0; i < board.size(); i++)
