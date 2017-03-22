@@ -165,7 +165,7 @@ public class PegGame
     */
     class ClickListener implements ActionListener
     {
-        boolean firstTurn = true;
+       private boolean firstTurn = true;
        /**
        * Button listener method to check button clicks.
        * @param e Button clicked
