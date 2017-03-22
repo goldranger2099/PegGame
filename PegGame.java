@@ -29,7 +29,7 @@ public class PegGame
         background = ImageIO.read(url1);
     }
     catch (IOException e) {}
-    ArrayList<JButton> buttons = new ArrayList<>();
+    
     final Image backgroundImage = background;
     JLabel backgroundLabel = new JLabel(new ImageIcon(backgroundImage));
     
@@ -51,16 +51,19 @@ public class PegGame
     }
     catch (IOException e) {}
     final Image resetImage = reset.getSubimage(0, 550, 500, 50); 
-    ImageIcon resetIcon = new ImageIcon(resetImage);
+    final ImageIcon resetIcon = new ImageIcon(resetImage);
     
-    //Adds reset image to resetButton
-    resetButton.setIcon(resetIcon);
+    //Creates reset button and adds reset image
+    JButton resetButton = new JButton(resetIcon);
+    resetButton.setPreferredSize(new Dimension(500,50));
     
     //Creates title display area
-    JLabel titleDisplayText = new JLabel("REMOVE A PEG");
     JPanel titleDisplay = new JPanel();
     titleDisplay.setLayout(null);
     titleDisplay.setPreferredSize(new Dimension(500,50));
+    
+    //Creates text for title display area
+    JLabel titleDisplayText = new JLabel("REMOVE A PEG");
     
     //Gets title background image from URL
     BufferedImage title = null;
@@ -105,6 +108,9 @@ public class PegGame
     catch (IOException e) {}
     final Image pegImage = peg;
     ImageIcon pegIcon = new ImageIcon(pegImage);
+    
+    //Creates array of JButtons
+    ArrayList<JButton> buttons = new ArrayList<>();
     
     //Creates buttons 1 - 15
     
