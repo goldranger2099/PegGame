@@ -45,7 +45,7 @@ public class Rules
       return true; 
     }
   }
-  //Checks to see whether a peg can move to a certain space or not.
+  //Checks to see whether a peg can move to a certain space or not, and returns an int of total possible moves
   public int canMove(Board board, int peg)
   {
     int counter = 0;
@@ -94,6 +94,7 @@ public class Rules
     return counter;
   }
   
+  //If only one move is available, this method finds the positions of the middle peg and end peg
   public int[] findOneMove(Board board, int peg)
   {
     //O is midPosX, 1 is MidPosY, 2 is EndPosX, 3 is EndPosY
