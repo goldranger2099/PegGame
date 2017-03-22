@@ -60,6 +60,8 @@ public class PegGame
     
     //Creates text for title display area
     JLabel titleDisplayText = new JLabel("REMOVE A PEG");
+    titleDisplayText.setFont(new Font("Verdana", Font.PLAIN, 12));
+    titleDisplayText.setForeground(Color.WHITE);
     
     //Gets title background image from URL
     BufferedImage title = null;
@@ -105,31 +107,67 @@ public class PegGame
     final Image pegImage = peg;
     ImageIcon pegIcon = new ImageIcon(pegImage);
     
+    //Gets X image from URL
+    /*BufferedImage redX = null;
+    try
+    {
+        URL url6 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/Peg%20but%20it's%20100x100.png");
+        redX = ImageIO.read(url6);
+    }
+    catch (IOException e) {}
+    final Image redXImage = redX;
+    ImageIcon redXIcon = new ImageIcon(redXImage);
+    */
+   
     //Creates buttons 1 - 15
     
     JButton button1 = new JButton(pegIcon);
     //button1.setContentAreaFilled(false);
-    //button1.setFocusPainted(false); 
-    //button1.setBorderPainted(false);
-    //button1.setIcon(pegIcon);
-    //button1.setBorderPainted(false);
-    //button1.setFocusPainted(false); 
-    //button1.setBackground(null);
+    button1.setFocusPainted(false); 
+    button1.setBorderPainted(false);
     
     JButton button2 = new JButton(pegIcon);
+    button2.setFocusPainted(false); 
+    button2.setBorderPainted(false);
     JButton button3 = new JButton(pegIcon);
+    button3.setFocusPainted(false); 
+    button3.setBorderPainted(false);
     JButton button4 = new JButton(pegIcon);
+    button4.setFocusPainted(false); 
+    button4.setBorderPainted(false);
     JButton button5 = new JButton(pegIcon);
+    button5.setFocusPainted(false); 
+    button5.setBorderPainted(false);
     JButton button6 = new JButton(pegIcon);
+    button6.setFocusPainted(false); 
+    button6.setBorderPainted(false);
     JButton button7 = new JButton(pegIcon);
+    button7.setFocusPainted(false); 
+    button7.setBorderPainted(false);
     JButton button8 = new JButton(pegIcon);
+    button8.setFocusPainted(false); 
+    button8.setBorderPainted(false);
     JButton button9 = new JButton(pegIcon);
+    button9.setFocusPainted(false); 
+    button9.setBorderPainted(false);
     JButton button10 = new JButton(pegIcon);
+    button10.setFocusPainted(false); 
+    button10.setBorderPainted(false);
     JButton button11 = new JButton(pegIcon);
+    button11.setFocusPainted(false); 
+    button11.setBorderPainted(false);
     JButton button12 = new JButton(pegIcon);
+    button12.setFocusPainted(false); 
+    button12.setBorderPainted(false);
     JButton button13 = new JButton(pegIcon);
+    button13.setFocusPainted(false); 
+    button13.setBorderPainted(false);
     JButton button14 = new JButton(pegIcon);
+    button14.setFocusPainted(false); 
+    button14.setBorderPainted(false);
     JButton button15 = new JButton(pegIcon);
+    button15.setFocusPainted(false); 
+    button15.setBorderPainted(false);
     
     //Creates array of JButtons
     ArrayList<JButton> buttons = new ArrayList<>();
@@ -169,6 +207,7 @@ public class PegGame
        */
        public void actionPerformed(ActionEvent e)
        {
+          //If value of peg is 1, set the button icon to a peg. Otherwise if the value is 0, set the button icon to clear.
           if(board.getBoard().get(0).getValue() == 1)
           {
               button1.setIcon(pegIcon);
@@ -288,7 +327,7 @@ public class PegGame
           {
               button15.setIcon(clearIcon);
           }
-           
+          //If it is the first turn, the player clicks a button to remove that peg
           if(firstTurn == true)
           {
             titleDisplayText.setText("REMOVE A PEG");
@@ -398,6 +437,7 @@ public class PegGame
               }
               else if (rules.canMove(board, 1) > 1)
               {
+                  
               }
             }
             else if(e.getSource() == button2)
