@@ -105,9 +105,6 @@ public class PegGame
     final Image pegImage = peg;
     ImageIcon pegIcon = new ImageIcon(pegImage);
     
-    //Creates array of JButtons
-    ArrayList<JButton> buttons = new ArrayList<>();
-    
     //Creates buttons 1 - 15
     
     JButton button1 = new JButton(pegIcon);
@@ -149,6 +146,26 @@ public class PegGame
     button14.setBackground(Color.BLACK);
     JButton button15 = new JButton();
     button15.setBackground(Color.BLACK);
+    
+    //Creates array of JButtons
+    ArrayList<JButton> buttons = new ArrayList<>();
+    
+    //Adds buttons to ArrayList buttons
+    buttons.add(button1);
+    buttons.add(button2);
+    buttons.add(button3);
+    buttons.add(button4);
+    buttons.add(button5);
+    buttons.add(button6);
+    buttons.add(button7);
+    buttons.add(button8);
+    buttons.add(button9);
+    buttons.add(button10);
+    buttons.add(button11);
+    buttons.add(button12);
+    buttons.add(button13);
+    buttons.add(button14);
+    buttons.add(button15);
     
     //Creates board object.
     final Board board = new Board();
