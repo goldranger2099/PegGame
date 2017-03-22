@@ -49,44 +49,44 @@ public class Rules
   public int canMove(Board board, int peg)
   {
     int counter = 0;
-    if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
+    if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY()) != null  &&  (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 4 , ((Peg)(board.getBoard().get(peg - 1))).getPosY()) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
       {
         counter++;
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
+    if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY()) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
     {
-        if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
+        if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 4 , ((Peg)(board.getBoard().get(peg - 1))).getPosY()) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
       {
         counter++;
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
+    if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1, ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
       {
         counter++;
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
+    if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
       {
         counter++;
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
+    if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
       {
         counter++;
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
+    if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
       {
         counter++;
       }
@@ -99,9 +99,9 @@ public class Rules
   {
     //O is midPosX, 1 is MidPosY, 2 is EndPosX, 3 is EndPosY
     int[] midEndPegPosXY = new int[4];
-    if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
+    if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY()) != null  &&  (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 4 , ((Peg)(board.getBoard().get(peg - 1))).getPosY()) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
       {
         midEndPegPosXY[0] = ((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2;
         midEndPegPosXY[1] = ((Peg)(board.getBoard().get(peg - 1))).getPosY();
@@ -109,9 +109,9 @@ public class Rules
         midEndPegPosXY[3] = ((Peg)(board.getBoard().get(peg - 1))).getPosY();
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
+    else if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY()) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 1))
     {
-        if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
+        if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 4 , ((Peg)(board.getBoard().get(peg - 1))).getPosY()) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 4, ((Peg)(board.getBoard().get(peg - 1))).getPosY())).getValue() == 0))
       {
         midEndPegPosXY[0] = ((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2;
         midEndPegPosXY[1] = ((Peg)(board.getBoard().get(peg - 1))).getPosY();
@@ -119,9 +119,9 @@ public class Rules
         midEndPegPosXY[3] = ((Peg)(board.getBoard().get(peg - 1))).getPosY();
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
+    else if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1, ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
       {
         midEndPegPosXY[0] = ((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1;
         midEndPegPosXY[1] = ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1;
@@ -129,9 +129,9 @@ public class Rules
         midEndPegPosXY[3] = ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2;
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
+    else if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1)).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2)).getValue() == 0))
       {
         midEndPegPosXY[0] = ((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1;
         midEndPegPosXY[1] = ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 1;
@@ -139,9 +139,9 @@ public class Rules
         midEndPegPosXY[3] = ((Peg)(board.getBoard().get(peg - 1))).getPosY() - 2;
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
+    else if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() - 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
       {
         midEndPegPosXY[0] = ((Peg)(board.getBoard().get(peg - 1))).getPosX() - 1;
         midEndPegPosXY[1] = ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1;
@@ -149,9 +149,9 @@ public class Rules
         midEndPegPosXY[3] = ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2;
       }
     }
-    else if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
+    else if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1)).getValue() == 1))
     {
-      if((((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
+      if((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2 , ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2) != null  && (((Peg)board.getPeg(((Peg)(board.getBoard().get(peg - 1))).getPosX() + 2,((Peg)(board.getBoard().get(peg - 1))).getPosY() + 2)).getValue() == 0))
       {
         midEndPegPosXY[0] = ((Peg)(board.getBoard().get(peg - 1))).getPosX() + 1;
         midEndPegPosXY[1] = ((Peg)(board.getBoard().get(peg - 1))).getPosY() + 1;
