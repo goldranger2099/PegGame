@@ -162,7 +162,7 @@ public class PegGame
     */
     class ClickListener implements ActionListener
     {
-       private boolean firstTurn = true;
+      private boolean firstTurn = true;
        /**
        * Button listener method to check button clicks.
        * @param e Button clicked
@@ -604,27 +604,8 @@ public class PegGame
               titleDisplayText.setText("REMOVE A PEG");
               firstTurn = true;
             }
-            if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
-            {
-              board.resetBoard();
-              button1.setEnabled(true);
-              button2.setEnabled(true);
-              button3.setEnabled(true);
-              button4.setEnabled(true);
-              button5.setEnabled(true);
-              button6.setEnabled(true);
-              button7.setEnabled(true);
-              button8.setEnabled(true);
-              button9.setEnabled(true);
-              button10.setEnabled(true);
-              button11.setEnabled(true);
-              button12.setEnabled(true);
-              button13.setEnabled(true);
-              button14.setEnabled(true);
-              button15.setEnabled(true);
-              titleDisplayText.setText("REMOVE A PEG");
-              firstTurn = true;
-            }
+            
+            //Checks if player has won the game
             if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
             {
               titleDisplayText.setText("YOU WIN!");
@@ -644,6 +625,8 @@ public class PegGame
               button14.setEnabled(false);
               button15.setEnabled(false);
             }
+            
+            //Checks if player has lost the game
             if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
             {
               titleDisplayText.setText("YOU LOST!");
@@ -668,7 +651,7 @@ public class PegGame
       }
     }
     
-    //Adds listener to buttons 1-15
+    //Adds click listeners to buttons 1-15
     ActionListener boardListener = new ClickListener();
     button1.addActionListener(boardListener);
     button2.addActionListener(boardListener);
