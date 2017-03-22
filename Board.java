@@ -7,7 +7,7 @@ public class Board
   {
     /**
     * Creation of Pegs and sets them on board.
-    **/
+    */
     Peg peg1 = new Peg(5, 5, 1);
     board.add(peg1);
     Peg peg2 = new Peg(4, 4, 2);
