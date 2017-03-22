@@ -40,7 +40,7 @@ public class Board
     board.add(peg15);
     /**
     * Sets ALL pegs to 1, which means the pegs are on the board.
-    **/
+    */
     for(int i = 0; i < board.size(); i++)
     {
       board.get(i).setValue(1);
@@ -48,7 +48,7 @@ public class Board
   }
   /**
   *   Resets board completely.
-  **/
+  */
   public void resetBoard()
   {
     for(int i = 0; i < board.size(); i++)
