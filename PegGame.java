@@ -1,4 +1,4 @@
-/**
+/*
  * 
  */
 
@@ -37,10 +37,6 @@ public class PegGame
     pegBoard.add(backgroundLabel);
     backgroundLabel.setSize(500,500);
     backgroundLabel.setLocation(0,0);
-    
-    //Creates reset button
-    JButton resetButton = new JButton();
-    resetButton.setPreferredSize(new Dimension(500,50));
     
     //Gets reset button background image from URL
     BufferedImage reset = null;
@@ -174,7 +170,7 @@ public class PegGame
        {
           if(firstTurn == true)
           {
-            titleDisplayText.setText("PEG GAME");
+            titleDisplayText.setText("REMOVE A PEG");
             if (e.getSource() == button1)
             {
                 board.removePeg(1);
@@ -269,6 +265,7 @@ public class PegGame
          //How are we going to check when the pegs have more than one options?
        else
         {
+          titleDisplayText.setText("");
             if (e.getSource() == button1)
             {
               if(rules.canMove(board, 1) == 1)
