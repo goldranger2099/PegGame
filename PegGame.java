@@ -108,8 +108,7 @@ public class PegGame
     //Creates buttons 1 - 15
     
     JButton button1 = new JButton(pegIcon);
-    //button1.setOpaque(true);
-    //button1.setContentAreaFilled(true);
+    //button1.setContentAreaFilled(false);
     //button1.setFocusPainted(false); 
     //button1.setBorderPainted(false);
     //button1.setIcon(pegIcon);
@@ -117,35 +116,20 @@ public class PegGame
     //button1.setFocusPainted(false); 
     //button1.setBackground(null);
     
-    
-    JButton button2 = new JButton();
-    button2.setBackground(Color.BLACK);
-    JButton button3 = new JButton();
-    button3.setBackground(Color.BLACK);
-    JButton button4 = new JButton();
-    button4.setBackground(Color.BLACK);
-    JButton button5 = new JButton();
-    button5.setBackground(Color.BLACK);
-    JButton button6 = new JButton();
-    button6.setBackground(Color.BLACK);
-    JButton button7 = new JButton();
-    button7.setBackground(Color.BLACK);
-    JButton button8 = new JButton();
-    button8.setBackground(Color.BLACK);
-    JButton button9 = new JButton();
-    button9.setBackground(Color.BLACK);
-    JButton button10 = new JButton();
-    button10.setBackground(Color.BLACK);
-    JButton button11 = new JButton();
-    button11.setBackground(Color.BLACK);
-    JButton button12 = new JButton();
-    button12.setBackground(Color.BLACK);
-    JButton button13 = new JButton();
-    button13.setBackground(Color.BLACK);
-    JButton button14 = new JButton();
-    button14.setBackground(Color.BLACK);
-    JButton button15 = new JButton();
-    button15.setBackground(Color.BLACK);
+    JButton button2 = new JButton(pegIcon);
+    JButton button3 = new JButton(pegIcon);
+    JButton button4 = new JButton(pegIcon);
+    JButton button5 = new JButton(pegIcon);
+    JButton button6 = new JButton(pegIcon);
+    JButton button7 = new JButton(pegIcon);
+    JButton button8 = new JButton(pegIcon);
+    JButton button9 = new JButton(pegIcon);
+    JButton button10 = new JButton(pegIcon);
+    JButton button11 = new JButton(pegIcon);
+    JButton button12 = new JButton(pegIcon);
+    JButton button13 = new JButton(pegIcon);
+    JButton button14 = new JButton(pegIcon);
+    JButton button15 = new JButton(pegIcon);
     
     //Creates array of JButtons
     ArrayList<JButton> buttons = new ArrayList<>();
