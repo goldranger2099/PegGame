@@ -437,7 +437,14 @@ public class PegGame
               }
               else if (rules.canMove(board, 1) > 1)
               {
+                  /*Check all possible moves (i.e. copy some code from canMove: around peg 1 there are two pegs. 
+                  If pegs 2 and 3 both have value of 1, then if either or both pegs 4 and 6 have either value of 0, then set icons of pegs 4 and 6 to redXIcon.
+                  Need another if statement for e.getSource() is a button that has a redXIcon, so player can click to move the peg manually
                   
+                  if (button4.getIcon().equals(redXIcon) {};
+                  
+                  then do board.movePeg();
+                  */
               }
             }
             else if(e.getSource() == button2)
