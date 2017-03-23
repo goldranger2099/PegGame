@@ -25,8 +25,16 @@ import java.io.*;
 import javax.swing.*;
 import javax.imageio.*;
 
+/**
+ * Creates visible peg board for the players to play.
+ * @see Board
+ * @see Rules
+ */
 public class PegGame
 {
+  /**
+    * Main method runs the peg game.
+    */
   public static void main(String[] args)
   {
     //Creates playing board and window
@@ -209,7 +217,7 @@ public class PegGame
     final Rules rules = new Rules();
     
     /**
-    * Listener class for buttons for choosing pegs on the board
+    * Listener class for buttons for choosing pegs on the board and updating every turn
     */
     class ClickListener implements ActionListener
     {
@@ -435,7 +443,7 @@ public class PegGame
                 button14.setIcon(clearIcon);
             }
           }
-          //How are we going to check when the pegs have more than one options?
+          //After first turn, checking for peg moves
           else
           {
             titleDisplayText.setText("");
