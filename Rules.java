@@ -1,6 +1,14 @@
+/**
+ * The class that contains the game rules 
+ * @author Robert Vince Evan and Nolan
+ */
 public class Rules
 {
-  // Checks if there is one peg left.
+  /**
+   * Checks if there is one peg left.
+   * @param board Board object containing pegs
+   * @return boolean True or false if the player has won
+   */ 
   public boolean checkWinner(Board board)
   {
     boolean onePeg = false;
@@ -22,7 +30,11 @@ public class Rules
     }
     return onePeg;
   }
-  //Checks to see if there are any moves left.
+  /**
+   * Checks to see if there are any moves left.
+   * @param board Board object containing pegs
+   * @return boolean True or false if the player has lost
+   */
   public boolean checkLoser(Board board)
   {
     int counter = 0;
@@ -45,7 +57,12 @@ public class Rules
       return true; 
     }
   }
-  //Checks to see whether a peg can move to a certain space or not, and returns an int of total possible moves
+  /**
+   * Checks to see whether a peg can move to a certain space or not
+   * @param board Board object containing pegs
+   * @param peg Peg number
+   * @return int Number of total possible moves
+   */
   public int canMove(Board board, int peg)
   {
     int counter = 0;
@@ -94,7 +111,12 @@ public class Rules
     return counter;
   }
   
-  //If only one move is available, this method finds the positions of the middle peg and end peg
+  /**
+   * If only one move is available, this method finds the positions of the middle peg and end peg
+   * @param board Board object containing pegs
+   * @param peg Peg number
+   * @return int[] Array containing position x and y of the middle and end pegs
+   */
   public int[] findOneMove(Board board, int peg)
   {
     //O is midPosX, 1 is MidPosY, 2 is EndPosX, 3 is EndPosY
