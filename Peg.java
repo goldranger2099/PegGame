@@ -1,6 +1,9 @@
 /**
  * The class that contains peg values
- * @author Robert Vince Evan and Nolan
+ * @author Vincent Lam
+ * @author Robert Sobieski
+ * @author Evan Dawkins
+ * @author Nolan Major
  */
 public class Peg
   {
