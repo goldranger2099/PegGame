@@ -1,6 +1,9 @@
 /**
  * The class that contains the game rules 
- * @author Robert Vince Evan and Nolan
+ * @author Vincent Lam
+ * @author Robert Sobieski
+ * @author Evan Dawkins
+ * @author Nolan Major
  */
 public class Rules
 {
