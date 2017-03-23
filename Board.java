@@ -104,7 +104,7 @@ public class Board
     return null;
   }
   /**
-   * Returns board
+   * Returns ArrayList board
    * @return ArrayList<Peg> An array list containing pegs
    */
   public ArrayList<Peg> getBoard()
