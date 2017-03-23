@@ -431,8 +431,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 1);
                   board.movePeg(1, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(0).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -452,8 +450,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 2);
                   board.movePeg(2, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(1).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -466,8 +462,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 3);
                   board.movePeg(3, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(2).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -479,8 +473,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 4);
                   board.movePeg(4, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(3).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -492,8 +484,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 5);
                   board.movePeg(5, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(4).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -505,8 +495,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 6);
                   board.movePeg(6, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(5).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -518,8 +506,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 7);
                   board.movePeg(7, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(6).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -531,8 +517,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 8);
                   board.movePeg(8, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(7).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -544,8 +528,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 9);
                   board.movePeg(9, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(8).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -557,8 +539,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 10);
                   board.movePeg(10, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(9).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -570,8 +550,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 11);
                   board.movePeg(11, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(10).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -583,8 +561,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 12);
                   board.movePeg(12, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum()); 
-                  buttons.get(11).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -596,8 +572,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 13);
                   board.movePeg(13, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(12).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -609,8 +583,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 14);
                   board.movePeg(14, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(13).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -622,8 +594,6 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 15);
                   board.movePeg(15, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(14).setIcon(clearIcon);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
