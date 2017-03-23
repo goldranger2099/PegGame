@@ -1,39 +1,64 @@
+/**
+ * The class that contains peg values
+ * @author Robert Vince Evan and Nolan
+ */
 public class Peg
   {
-    /*
-    Sets the X and Y of the Peg board as well as the beginning values.
-    */
+    
+    //Sets the X and Y of the Peg board as well as the beginning values.
+    
     private int posX;
     private int posY;
     private int value;
     private int pegNum;
+    /**
+     * Constructor of the peg class
+     * @param posX Position x of the peg
+     * @param posY Position y of the peg
+     * @param pegNum Peg number
+     */
     public Peg(int posX, int posY, int pegNum)
     {
       this.posX = posX;
       this.posY = posY;
       this.pegNum = pegNum;
     }
-    //Returns X
+    /**
+     * Method that returns position X of a peg
+     * @return int Position x
+     */
     public int getPosX()
     {
       return posX;
     }
-    //Returns Y
+    /**
+     * Method that returns position Y of a peg
+     * @return int Position Y
+     */
     public int getPosY()
     {
       return posY;
     }
-    //Changes the Value in that pegs properties
+    /**
+     * Method that changes the value in that pegs properties
+     * @param value New peg value
+     */
     public void setValue(int value)
     {
       this.value = value;
     }
-    //Returns a pegs value
+    /**
+     * Method that returns a pegs value
+     * @return int Peg value
+     */
     public int getValue()
     {
       return value;
     }
-    
+    /**
+     * Method that returns a pegs number
+     * @return int Peg number
+     */
     public int getNum()
     {
       return pegNum;
