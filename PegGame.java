@@ -1,5 +1,19 @@
-/*
+/**
+ * This program run a basic game of the Peg Game, or Triangle Peg.
+ * A player begins playing the Peg Game on a triangle shaped board. The player clicks any one of 15 available pegs to remove, then the game begins.
+ * A player can select a peg if the position next to the adjacent peg is empty (both the two pegs and empty position must be in a straight line).
+ * The selected peg is then moved to the empty position, while the adjacent peg, which is “jumped over,” is removed.
+ * However, if the selected peg has two or more such empty positions available to move to, the player must select the end position.
+ * Before every turn, the game will check for any available moves, i.e. pegs that can move to empty positions; if not, the player loses the game.
+ * The player wins the peg game if only one peg remains anywhere on the board.
+ * At any point in the game, the player can click on the reset button to reset the board.
  * 
+ * @author Vincent Lam
+ * @author Robert Sobieski
+ * @author Evan Dawkins
+ * @author Nolan Major
+ * @version %I%, %G%
+ * @since 0.1.3.25
  */
 
 import java.util.ArrayList;
