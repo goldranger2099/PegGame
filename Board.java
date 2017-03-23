@@ -1,6 +1,9 @@
 /**
  * The board class that holds all the pegs
- * @author Robert Vince Evan and Nolan
+ * @author Vincent Lam
+ * @author Robert Sobieski
+ * @author Evan Dawkins
+ * @author Nolan Major
  */
 import java.util.ArrayList;
 
@@ -104,7 +107,7 @@ public class Board
     return null;
   }
   /**
-   * Returns ArrayList board
+   * Returns Arraylist board
    * @return ArrayList<Peg> An array list containing pegs
    */
   public ArrayList<Peg> getBoard()
