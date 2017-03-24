@@ -125,47 +125,58 @@ public class Rules
      */
     public int findMidPeg(Board board, int pegStart, int pegEnd)
     {
-        if((board.getBoard().get(pegStart - 1).getNum() == 1 && (board.getBoard().get(pegEnd - 1).getNum() == 4)))
+        if((board.getBoard().get(pegStart - 1).getNum() == 1 && (board.getBoard().get(pegEnd - 1).getNum() == 4)) || (board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 1)))
         {
             return 2;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 1 && (board.getBoard().get(pegEnd - 1).getNum() == 5)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 1 && (board.getBoard().get(pegEnd - 1).getNum() == 5)) || (board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 1)))
         {
             return 3;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 2 && (board.getBoard().get(pegEnd - 1).getNum() == 7)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 2 && (board.getBoard().get(pegEnd - 1).getNum() == 7)) || (board.getBoard().get(pegStart - 1).getNum() == 7 && (board.getBoard().get(pegEnd - 1).getNum() == 2)))
         {
             return 4;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 2 && (board.getBoard().get(pegEnd - 1).getNum() == 9)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 2 && (board.getBoard().get(pegEnd - 1).getNum() == 9)) || (board.getBoard().get(pegStart - 1).getNum() == 9 && (board.getBoard().get(pegEnd - 1).getNum() == 2)))
         {
             return 5;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 3 && (board.getBoard().get(pegEnd - 1).getNum() == 8)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 3 && (board.getBoard().get(pegEnd - 1).getNum() == 8)) || (board.getBoard().get(pegStart - 1).getNum() == 8 && (board.getBoard().get(pegEnd - 1).getNum() == 3)))
         {
             return 5;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 3 && (board.getBoard().get(pegEnd - 1).getNum() == 10)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 3 && (board.getBoard().get(pegEnd - 1).getNum() == 10)) || (board.getBoard().get(pegStart - 1).getNum() == 10 && (board.getBoard().get(pegEnd - 1).getNum() == 3)))
         {
             return 6;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 11)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 11)) || (board.getBoard().get(pegStart - 1).getNum() == 11 && (board.getBoard().get(pegEnd - 1).getNum() == 4)))
         {
             return 7;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 13)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 13)) || (board.getBoard().get(pegStart - 1).getNum() == 13 && (board.getBoard().get(pegEnd - 1).getNum() == 4)))
         {
             return 8;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 12)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 12)) || (board.getBoard().get(pegStart - 1).getNum() == 12 && (board.getBoard().get(pegEnd - 1).getNum() == 5)))
         {
             return 8;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 14)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 14)) || (board.getBoard().get(pegStart - 1).getNum() == 14 && (board.getBoard().get(pegEnd - 1).getNum() == 5)))
         {
             return 9;
         }
-        return 0;
+        else if((board.getBoard().get(pegStart - 1).getNum() == 6 && (board.getBoard().get(pegEnd - 1).getNum() == 13)) || (board.getBoard().get(pegStart - 1).getNum() == 13 && (board.getBoard().get(pegEnd - 1).getNum() == 6)))
+        {
+            return 9;
+        }
+        else if((board.getBoard().get(pegStart - 1).getNum() == 6 && (board.getBoard().get(pegEnd - 1).getNum() == 15)) || (board.getBoard().get(pegStart - 1).getNum() == 15 && (board.getBoard().get(pegEnd - 1).getNum() == 6)))
+        {
+            return 10;
+        }
+        else
+        {
+            return 0;
+        }
     }
     
     /**
@@ -177,43 +188,51 @@ public class Rules
      */
     public boolean isMidPeg(Board board, int pegStart, int pegEnd)
     {
-        if((board.getBoard().get(pegStart - 1).getNum() == 1 && (board.getBoard().get(pegEnd - 1).getNum() == 4)))
+        if((board.getBoard().get(pegStart - 1).getNum() == 1 && (board.getBoard().get(pegEnd - 1).getNum() == 4)) || (board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 1)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 1 && (board.getBoard().get(pegEnd - 1).getNum() == 5)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 1 && (board.getBoard().get(pegEnd - 1).getNum() == 5)) || (board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 1)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 2 && (board.getBoard().get(pegEnd - 1).getNum() == 7)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 2 && (board.getBoard().get(pegEnd - 1).getNum() == 7)) || (board.getBoard().get(pegStart - 1).getNum() == 7 && (board.getBoard().get(pegEnd - 1).getNum() == 2)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 2 && (board.getBoard().get(pegEnd - 1).getNum() == 9)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 2 && (board.getBoard().get(pegEnd - 1).getNum() == 9)) || (board.getBoard().get(pegStart - 1).getNum() == 9 && (board.getBoard().get(pegEnd - 1).getNum() == 2)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 3 && (board.getBoard().get(pegEnd - 1).getNum() == 8)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 3 && (board.getBoard().get(pegEnd - 1).getNum() == 8)) || (board.getBoard().get(pegStart - 1).getNum() == 8 && (board.getBoard().get(pegEnd - 1).getNum() == 3)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 3 && (board.getBoard().get(pegEnd - 1).getNum() == 10)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 3 && (board.getBoard().get(pegEnd - 1).getNum() == 10)) || (board.getBoard().get(pegStart - 1).getNum() == 10 && (board.getBoard().get(pegEnd - 1).getNum() == 3)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 11)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 11)) || (board.getBoard().get(pegStart - 1).getNum() == 11 && (board.getBoard().get(pegEnd - 1).getNum() == 4)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 13)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 4 && (board.getBoard().get(pegEnd - 1).getNum() == 13)) || (board.getBoard().get(pegStart - 1).getNum() == 13 && (board.getBoard().get(pegEnd - 1).getNum() == 4)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 12)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 12)) || (board.getBoard().get(pegStart - 1).getNum() == 12 && (board.getBoard().get(pegEnd - 1).getNum() == 5)))
         {
             return true;
         }
-        else if((board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 14)))
+        else if((board.getBoard().get(pegStart - 1).getNum() == 5 && (board.getBoard().get(pegEnd - 1).getNum() == 14)) || (board.getBoard().get(pegStart - 1).getNum() == 14 && (board.getBoard().get(pegEnd - 1).getNum() == 5)))
+        {
+            return true;
+        }
+        else if((board.getBoard().get(pegStart - 1).getNum() == 6 && (board.getBoard().get(pegEnd - 1).getNum() == 13)) || (board.getBoard().get(pegStart - 1).getNum() == 13 && (board.getBoard().get(pegEnd - 1).getNum() == 6)))
+        {
+            return true;
+        }
+        else if((board.getBoard().get(pegStart - 1).getNum() == 6 && (board.getBoard().get(pegEnd - 1).getNum() == 15)) || (board.getBoard().get(pegStart - 1).getNum() == 15 && (board.getBoard().get(pegEnd - 1).getNum() == 6)))
         {
             return true;
         }
