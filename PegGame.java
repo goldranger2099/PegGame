@@ -1,3 +1,7 @@
+/*
+ * 
+ */
+
 import java.util.ArrayList;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,65 +15,163 @@ public class PegGame
 {
   public static void main(String[] args)
   {
-    //Creates playing window and board
-    class DrawingComponent extends JComponent
-    {
-      private BufferedImage backgroundImage = null;
-      private void loadBackground()
-      {
-      try {
-          URL url1 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
-          backgroundImage = ImageIO.read(url1);
-    
-      }
-      catch (IOException e) {}
-      }
-      public void paintComponent(Graphics g)
-      {
-        g.drawImage(backgroundImage, 0, 0, null);
-      }
-    }
-    ArrayList<JButton> buttons = new ArrayList<>();
-    final DrawingComponent component = new DrawingComponent();
-    component.loadBackground();
+    //Creates playing board and window
     JFrame boardFrame = new JFrame("Peg Game");
     boardFrame.setPreferredSize(new Dimension(500, 625));
-    boardFrame.add(component);
-    
     JPanel pegBoard = new JPanel();
     pegBoard.setLayout(null);
     
+    //Gets board background image from URL
+    BufferedImage background = null;
+    try
+    {
+        URL url1 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
+        background = ImageIO.read(url1);
+    }
+    catch (IOException e) {}
+    
+    final Image backgroundImage = background;
+    JLabel backgroundLabel = new JLabel(new ImageIcon(backgroundImage));
+    
+    //Adds background image to pegBoard
+    pegBoard.add(backgroundLabel);
+    backgroundLabel.setSize(500,500);
+    backgroundLabel.setLocation(0,0);
+    
+    //Gets reset button background image from URL
+    BufferedImage reset = null;
+    try
+    {
+        URL url2 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
+        reset = ImageIO.read(url2);
+    }
+    catch (IOException e) {}
+    final Image resetImage = reset.getSubimage(0, 550, 500, 50); 
+    final ImageIcon resetIcon = new ImageIcon(resetImage);
+    
+    //Creates reset button and adds reset image
+    JButton resetButton = new JButton(resetIcon);
+    resetButton.setPreferredSize(new Dimension(500,50));
+    
+    //Creates title display area
+    JPanel titleDisplay = new JPanel();
+    titleDisplay.setLayout(null);
+    titleDisplay.setPreferredSize(new Dimension(500,50));
+    
+    //Creates text for title display area
+    JLabel titleDisplayText = new JLabel("REMOVE A PEG");
+    titleDisplayText.setFont(new Font("Verdana", Font.PLAIN, 12));
+    titleDisplayText.setForeground(Color.WHITE);
+    
+    //Gets title background image from URL
+    BufferedImage title = null;
+    try
+    {
+        URL url3 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/backgroundpeggame.png");
+        title = ImageIO.read(url3);
+    }
+    catch (IOException e) {}
+    final Image titleImage = title.getSubimage(0, 0, 500, 50); 
+    JLabel titleLabel = new JLabel(new ImageIcon(titleImage));
+    
+    //Adds titleText JLabel to titleDisplay JPanel
+    titleDisplay.add(titleDisplayText);
+    titleDisplayText.setSize(500,50);
+    titleDisplayText.setHorizontalAlignment(JLabel.CENTER);
+    titleDisplayText.setVerticalAlignment(JLabel.CENTER);
+    
+    //Adds title background image to titleDisplay
+    titleDisplay.add(titleLabel);
+    titleLabel.setSize(500,50);
+    titleLabel.setLocation(0,0);
+    
+    //Gets transparent button image from URL
+    BufferedImage clear = null;
+    try
+    {
+        URL url4 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/100x100%20blank.png");
+        clear = ImageIO.read(url4);
+    }
+    catch (IOException e) {}
+    final Image clearImage = clear;
+    ImageIcon clearIcon = new ImageIcon(clearImage);
+    
+    //Gets peg button image from URL
+    BufferedImage peg = null;
+    try
+    {
+        URL url5 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/Peg%20but%20it's%20100x100.png");
+        peg = ImageIO.read(url5);
+    }
+    catch (IOException e) {}
+    final Image pegImage = peg;
+    ImageIcon pegIcon = new ImageIcon(pegImage);
+    
+    //Gets X image from URL
+    BufferedImage redX = null;
+    try
+    {
+        URL url6 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/X.png");
+        redX = ImageIO.read(url6);
+    }
+    catch (IOException e) {}
+    final Image redXImage = redX;
+    ImageIcon redXIcon = new ImageIcon(redXImage);
+   
     //Creates buttons 1 - 15
-    JButton button1 = new JButton("");
-    button1.setBackground(Color.BLACK);
-    JButton button2 = new JButton("");
-    button2.setBackground(Color.BLACK);
-    JButton button3 = new JButton("");
-    button3.setBackground(Color.BLACK);
-    JButton button4 = new JButton("");
-    button4.setBackground(Color.BLACK);
-    JButton button5 = new JButton("");
-    button5.setBackground(Color.BLACK);
-    JButton button6 = new JButton("");
-    button6.setBackground(Color.BLACK);
-    JButton button7 = new JButton("");
-    button7.setBackground(Color.BLACK);
-    JButton button8 = new JButton("");
-    button8.setBackground(Color.BLACK);
-    JButton button9 = new JButton("");
-    button9.setBackground(Color.BLACK);
-    JButton button10 = new JButton("");
-    button10.setBackground(Color.BLACK);
-    JButton button11 = new JButton("");
-    button11.setBackground(Color.BLACK);
-    JButton button12 = new JButton("");
-    button12.setBackground(Color.BLACK);
-    JButton button13 = new JButton("");
-    button13.setBackground(Color.BLACK);
-    JButton button14 = new JButton("");
-    button14.setBackground(Color.BLACK);
-    JButton button15 = new JButton("");
-    button15.setBackground(Color.BLACK);
+    
+    JButton button1 = new JButton(pegIcon);
+    //button1.setContentAreaFilled(false);
+    button1.setFocusPainted(false); 
+    button1.setBorderPainted(false);
+    
+    JButton button2 = new JButton(pegIcon);
+    button2.setFocusPainted(false); 
+    button2.setBorderPainted(false);
+    JButton button3 = new JButton(pegIcon);
+    button3.setFocusPainted(false); 
+    button3.setBorderPainted(false);
+    JButton button4 = new JButton(pegIcon);
+    button4.setFocusPainted(false); 
+    button4.setBorderPainted(false);
+    JButton button5 = new JButton(pegIcon);
+    button5.setFocusPainted(false); 
+    button5.setBorderPainted(false);
+    JButton button6 = new JButton(pegIcon);
+    button6.setFocusPainted(false); 
+    button6.setBorderPainted(false);
+    JButton button7 = new JButton(pegIcon);
+    button7.setFocusPainted(false); 
+    button7.setBorderPainted(false);
+    JButton button8 = new JButton(pegIcon);
+    button8.setFocusPainted(false); 
+    button8.setBorderPainted(false);
+    JButton button9 = new JButton(pegIcon);
+    button9.setFocusPainted(false); 
+    button9.setBorderPainted(false);
+    JButton button10 = new JButton(pegIcon);
+    button10.setFocusPainted(false); 
+    button10.setBorderPainted(false);
+    JButton button11 = new JButton(pegIcon);
+    button11.setFocusPainted(false); 
+    button11.setBorderPainted(false);
+    JButton button12 = new JButton(pegIcon);
+    button12.setFocusPainted(false); 
+    button12.setBorderPainted(false);
+    JButton button13 = new JButton(pegIcon);
+    button13.setFocusPainted(false); 
+    button13.setBorderPainted(false);
+    JButton button14 = new JButton(pegIcon);
+    button14.setFocusPainted(false); 
+    button14.setBorderPainted(false);
+    JButton button15 = new JButton(pegIcon);
+    button15.setFocusPainted(false); 
+    button15.setBorderPainted(false);
+    
+    //Creates array of JButtons
+    ArrayList<JButton> buttons = new ArrayList<>();
+    
+    //Adds buttons to ArrayList buttons
     buttons.add(button1);
     buttons.add(button2);
     buttons.add(button3);
@@ -86,16 +188,6 @@ public class PegGame
     buttons.add(button14);
     buttons.add(button15);
     
-    //Creates reset button
-    JButton resetButton = new JButton("RESET");
-    resetButton.setBackground(Color.RED);
-    resetButton.setPreferredSize(new Dimension(500,50));
-    
-    //Creates title display area
-    JLabel titleDisplayText = new JLabel("REMOVE A PEG");
-    JPanel titleDisplay = new JPanel();
-    titleDisplay.setPreferredSize(new Dimension(500,50));
-    
     //Creates board object.
     final Board board = new Board();
       
@@ -107,121 +199,249 @@ public class PegGame
     */
     class ClickListener implements ActionListener
     {
-        boolean firstTurn = true;
+      private boolean firstTurn = true;
        /**
        * Button listener method to check button clicks.
        * @param e Button clicked
        */
        public void actionPerformed(ActionEvent e)
        {
+          //If value of peg is 1, set the button icon to a peg. Otherwise if the value is 0, set the button icon to clear.
+          if(board.getBoard().get(0).getValue() == 1)
+          {
+              button1.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(0).getValue() == 0)
+          {
+              button1.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(1).getValue() == 1)
+          {
+              button2.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(1).getValue() == 0)
+          {
+              button2.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(2).getValue() == 1)
+          {
+              button3.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(2).getValue() == 0)
+          {
+              button3.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(3).getValue() == 1)
+          {
+              button4.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(3).getValue() == 0)
+          {
+              button4.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(4).getValue() == 1)
+          {
+              button5.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(4).getValue() == 0)
+          {
+              button5.setIcon(clearIcon);
+          }if(board.getBoard().get(5).getValue() == 1)
+          {
+              button6.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(5).getValue() == 0)
+          {
+              button6.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(6).getValue() == 1)
+          {
+              button7.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(6).getValue() == 0)
+          {
+              button7.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(7).getValue() == 1)
+          {
+              button8.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(7).getValue() == 0)
+          {
+              button8.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(8).getValue() == 1)
+          {
+              button9.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(8).getValue() == 0)
+          {
+              button9.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(9).getValue() == 1)
+          {
+              button10.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(9).getValue() == 0)
+          {
+              button10.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(10).getValue() == 1)
+          {
+              button11.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(10).getValue() == 0)
+          {
+              button11.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(11).getValue() == 1)
+          {
+              button12.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(11).getValue() == 0)
+          {
+              button12.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(12).getValue() == 1)
+          {
+              button13.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(12).getValue() == 0)
+          {
+              button13.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(13).getValue() == 1)
+          {
+              button14.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(13).getValue() == 0)
+          {
+              button14.setIcon(clearIcon);
+          }
+          if(board.getBoard().get(14).getValue() == 1)
+          {
+              button15.setIcon(pegIcon);
+          }
+          else if(board.getBoard().get(14).getValue() == 0)
+          {
+              button15.setIcon(clearIcon);
+          }
+          //If it is the first turn, the player clicks a button to remove that peg
           if(firstTurn == true)
           {
-            titleDisplayText.setText("PEG GAME");
+            titleDisplayText.setText("REMOVE A PEG");
             if (e.getSource() == button1)
             {
                 board.removePeg(1);
                 firstTurn = false;
-                button1.setBackground(Color.WHITE);
+                button1.setIcon(clearIcon);
             }
             else if (e.getSource() == button2)
             {
                 board.removePeg(2);
                 firstTurn = false;
-                button2.setBackground(Color.WHITE);
+                button2.setIcon(clearIcon);
             }
             else if (e.getSource() == button3)
             {
                 board.removePeg(3);
                 firstTurn = false;
-                button3.setBackground(Color.WHITE);
+                button3.setIcon(clearIcon);
             }
             else if (e.getSource() == button4)
             {
                 board.removePeg(4);
                 firstTurn = false;
-                button4.setBackground(Color.WHITE);
+                button4.setIcon(clearIcon);
             }
             else if (e.getSource() == button5)
             {
                 board.removePeg(5);
                 firstTurn = false;
-                button5.setBackground(Color.WHITE);
+                button5.setIcon(clearIcon);
             }
             else if (e.getSource() == button6)
             {
                 board.removePeg(6);
                 firstTurn = false;
-                button6.setBackground(Color.WHITE);
+                button6.setIcon(clearIcon);
             }
             else if (e.getSource() == button7)
             {
                 board.removePeg(7);
                 firstTurn = false;
-                button7.setBackground(Color.WHITE);
+                button7.setIcon(clearIcon);
             }
             else if (e.getSource() == button8)
             {
                 board.removePeg(8);
                 firstTurn = false;
-                button8.setBackground(Color.WHITE);
+                button8.setIcon(clearIcon);
             }
             else if (e.getSource() == button9)
             {
                 board.removePeg(9);
                 firstTurn = false;
-                button9.setBackground(Color.WHITE);
+                button9.setIcon(clearIcon);
             }
             else if (e.getSource() == button10)
             {
                 board.removePeg(10);
                 firstTurn = false;
-                button10.setBackground(Color.WHITE);
+                button10.setIcon(clearIcon);
             }
             else if (e.getSource() == button11)
             {
                 board.removePeg(11);
                 firstTurn = false;
-                button11.setBackground(Color.WHITE);
+                button11.setIcon(clearIcon);
             }
             else if (e.getSource() == button12)
             {
                 board.removePeg(12);
                 firstTurn = false;
-                button12.setBackground(Color.WHITE);
+                button12.setIcon(clearIcon);
             }
             else if (e.getSource() == button13)
             {
                 board.removePeg(13);
                 firstTurn = false;
-                button13.setBackground(Color.WHITE);
+                button13.setIcon(clearIcon);
             }
             else if (e.getSource() == button14)
             {
                 board.removePeg(14);
                 firstTurn = false;
-                button14.setBackground(Color.WHITE);
+                button14.setIcon(clearIcon);
             }
             else if (e.getSource() == button15)
             {
                 board.removePeg(15);
                 firstTurn = false;
-                button15.setBackground(Color.WHITE);
+                button14.setIcon(clearIcon);
             }
           }
-         //How are we going to check when the pegs have more than one options?
-       else
-        {
+          //How are we going to check when the pegs have more than one options?
+          else
+          {
+            titleDisplayText.setText("");
             if (e.getSource() == button1)
             {
               if(rules.canMove(board, 1) == 1)
               {
                   int[] posXY = rules.findOneMove(board, 1);
                   board.movePeg(1, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(0).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
               }
               else if (rules.canMove(board, 1) > 1)
               {
+                  /*Check all possible moves (i.e. copy some code from canMove: around peg 1 there are two pegs. 
+                  If pegs 2 and 3 both have value of 1, then if either or both pegs 4 and 6 have either value of 0, then set icons of pegs 4 and 6 to redXIcon.
+                  Need another if statement for e.getSource() is a button that has a redXIcon, so player can click to move the peg manually
+                  
+                  if (button4.getIcon().equals(redXIcon) {};
+                  
+                  then do board.movePeg();
+                  */
               }
             }
             else if(e.getSource() == button2)
@@ -230,8 +450,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 2);
                   board.movePeg(2, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(1).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(1).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -244,8 +464,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 3);
                   board.movePeg(3, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(2).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(2).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -257,8 +477,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 4);
                   board.movePeg(4, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(3).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(3).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -270,8 +490,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 5);
                   board.movePeg(5, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(4).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(4).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -283,8 +503,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 6);
                   board.movePeg(6, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(5).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(5).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -296,8 +516,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 7);
                   board.movePeg(7, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(6).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(6).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -309,8 +529,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 8);
                   board.movePeg(8, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(7).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  // delete l8r buttons.get(7).setIcon(clearIcon);
+                  //buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -322,8 +542,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 9);
                   board.movePeg(9, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(8).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(8).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -335,8 +555,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 10);
                   board.movePeg(10, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(9).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(9).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -348,8 +568,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 11);
                   board.movePeg(11, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(10).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(10).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -361,8 +581,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 12);
                   board.movePeg(12, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum()); 
-                  buttons.get(11).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(11).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -374,8 +594,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 13);
                   board.movePeg(13, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(12).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(12).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -387,8 +607,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 14);
                   board.movePeg(14, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(13).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(13).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -400,8 +620,8 @@ public class PegGame
               {
                   int[] posXY = rules.findOneMove(board, 15);
                   board.movePeg(15, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                  buttons.get(14).setBackground(Color.WHITE);
-                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setBackground(Color.BLACK);
+                  buttons.get(14).setIcon(clearIcon);
+                  buttons.get(board.getPeg(posXY[2], posXY[3]).getNum() - 1).setIcon(pegIcon);
               }
               else if (rules.canMove(board, 1) > 1)
               {
@@ -410,83 +630,39 @@ public class PegGame
             else if (e.getSource() == resetButton)
             {
               board.resetBoard();
-              button1.setEnabled(true);
-              button2.setEnabled(true);
-              button3.setEnabled(true);
-              button4.setEnabled(true);
-              button5.setEnabled(true);
-              button6.setEnabled(true);
-              button7.setEnabled(true);
-              button8.setEnabled(true);
-              button9.setEnabled(true);
-              button10.setEnabled(true);
-              button11.setEnabled(true);
-              button12.setEnabled(true);
-              button13.setEnabled(true);
-              button14.setEnabled(true);
-              button15.setEnabled(true);
-              buttons.get(0).setBackground(Color.BLACK);
-              buttons.get(1).setBackground(Color.BLACK);
-              buttons.get(2).setBackground(Color.BLACK);
-              buttons.get(3).setBackground(Color.BLACK);
-              buttons.get(4).setBackground(Color.BLACK);
-              buttons.get(5).setBackground(Color.BLACK);
-              buttons.get(6).setBackground(Color.BLACK);
-              buttons.get(7).setBackground(Color.BLACK);
-              buttons.get(8).setBackground(Color.BLACK);
-              buttons.get(9).setBackground(Color.BLACK);
-              buttons.get(10).setBackground(Color.BLACK);
-              buttons.get(11).setBackground(Color.BLACK);
-              buttons.get(12).setBackground(Color.BLACK);
-              buttons.get(13).setBackground(Color.BLACK);
-              buttons.get(14).setBackground(Color.BLACK);
               titleDisplayText.setText("REMOVE A PEG");
+              for(int i = 0; i < buttons.size(); i++)
+              {
+                  buttons.get(i).setEnabled(true);
+              }
               firstTurn = true;
             }
+            
+            //Checks if player has won the game
             if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
             {
               titleDisplayText.setText("YOU WIN!");
-              button1.setEnabled(false);
-              button2.setEnabled(false);
-              button3.setEnabled(false);
-              button4.setEnabled(false);
-              button5.setEnabled(false);
-              button6.setEnabled(false);
-              button7.setEnabled(false);
-              button8.setEnabled(false);
-              button9.setEnabled(false);
-              button10.setEnabled(false);
-              button11.setEnabled(false);
-              button12.setEnabled(false);
-              button13.setEnabled(false);
-              button14.setEnabled(false);
-              button15.setEnabled(false);
+              for(int i = 0; i < buttons.size(); i++)
+              {
+                  buttons.get(i).setEnabled(false);
+              }
             }
+            
+            //Checks if player has lost the game
             if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
             {
               titleDisplayText.setText("YOU LOST!");
-              button1.setEnabled(false);
-              button2.setEnabled(false);
-              button3.setEnabled(false);
-              button4.setEnabled(false);
-              button5.setEnabled(false);
-              button6.setEnabled(false);
-              button7.setEnabled(false);
-              button8.setEnabled(false);
-              button9.setEnabled(false);
-              button10.setEnabled(false);
-              button11.setEnabled(false);
-              button12.setEnabled(false);
-              button13.setEnabled(false);
-              button14.setEnabled(false);
-              button15.setEnabled(false);
+              for(int i = 0; i < buttons.size(); i++)
+              {
+                  buttons.get(i).setEnabled(false);
+              }
             }
-       }
-       SwingUtilities.updateComponentTreeUI(boardFrame);
+          }
+          SwingUtilities.updateComponentTreeUI(boardFrame);
       }
     }
     
-    //Adds listener to buttons 1-15
+    //Adds click listeners to buttons 1-15
     ActionListener boardListener = new ClickListener();
     button1.addActionListener(boardListener);
     button2.addActionListener(boardListener);
@@ -549,11 +725,8 @@ public class PegGame
     button14.setLocation(300, 400);
     pegBoard.add(button15);
     button15.setSize(100,100);
-    button15.setLocation(400, 400);                            
+    button15.setLocation(400, 400);
     
-    //Adds titleText JLabel to titleDisplay JPanel
-    titleDisplay.add(titleDisplayText);
-      
     //Adds listener to reset button
     resetButton.addActionListener(boardListener);
     
