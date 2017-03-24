@@ -546,9 +546,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button2)
                         {
@@ -562,9 +562,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button3)
                         {
@@ -578,9 +578,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button4)
                         {
@@ -594,9 +594,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button5)
                         {
@@ -610,9 +610,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button6)
                         {
@@ -626,9 +626,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button7)
                         {
@@ -641,10 +641,10 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum()); 
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button8)
                         {
@@ -658,9 +658,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button9)
                         {
@@ -674,9 +674,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if(e.getSource() == button10)
                         {
@@ -690,9 +690,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button11)
                         {
@@ -706,9 +706,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button12)
                         {
@@ -722,9 +722,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button13)
                         {
@@ -738,9 +738,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button14)
                         {
@@ -754,9 +754,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         else if (e.getSource() == button15)
                         {
@@ -770,9 +770,9 @@ public class PegGame
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
                                     board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
-                                    firstPress = false;
                                 }
                             }
+                            firstPress = false;
                         }
                         //Checks if player has won the game
                         if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
