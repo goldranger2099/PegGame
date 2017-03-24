@@ -545,9 +545,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -563,9 +561,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -581,9 +577,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -599,9 +593,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -617,9 +609,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -635,9 +625,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -653,9 +641,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -671,9 +657,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -689,9 +673,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -707,9 +689,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -725,9 +705,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -743,9 +721,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -761,9 +737,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -779,9 +753,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
@@ -797,9 +769,7 @@ public class PegGame
                                 {
                                     midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
                                     //remove firstPeg, create secondPeg, ask player for next peg
-                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
-                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    board.movePeg(firstPeg.getNum(), midPeg.getNum(), secondPeg.getNum());
                                     firstPress = false;
                                 }
                             }
