@@ -2,11 +2,13 @@
  * This program run a basic game of the Peg Game, or Triangle Peg.
  * A player begins playing the Peg Game on a triangle shaped board. The player clicks any one of 15 available pegs to remove, then the game begins.
  * A player can select a peg if the position next to the adjacent peg is empty (both the two pegs and empty position must be in a straight line).
+ * Then the player selects the empty position to move to.
  * The selected peg is then moved to the empty position, while the adjacent peg, which is “jumped over,” is removed.
- * However, if the selected peg has two or more such empty positions available to move to, the player must select the end position.
+ * However, if the selected peg has two or more such empty positions available to move to, the player must still select the end position.
  * Before every turn, the game will check for any available moves, i.e. pegs that can move to empty positions; if not, the player loses the game.
  * The player wins the peg game if only one peg remains anywhere on the board.
  * At any point in the game, the player can click on the reset button to reset the board.
+ * Known glitches: buttons only appear after mouseover, reset button must be clicked twice to refresh, removing the first peg must be clicked twice to register.
  * 
  * @author Vincent Lam
  * @author Robert Sobieski
@@ -129,24 +131,11 @@ public class PegGame
         final Image pegImage = peg;
         ImageIcon pegIcon = new ImageIcon(pegImage);
 
-        //Gets X image from URL
-        BufferedImage redX = null;
-        try
-        {
-            URL url6 = new URL("https://raw.githubusercontent.com/goldranger2099/PegGame/master/X.png");
-            redX = ImageIO.read(url6);
-        }
-        catch (IOException e) {}
-        final Image redXImage = redX;
-        ImageIcon redXIcon = new ImageIcon(redXImage);
-
         //Creates buttons 1 - 15
-
         JButton button1 = new JButton(pegIcon);
         //button1.setContentAreaFilled(false);
         button1.setFocusPainted(false); 
         button1.setBorderPainted(false);
-
         JButton button2 = new JButton(pegIcon);
         button2.setFocusPainted(false); 
         button2.setBorderPainted(false);
@@ -224,6 +213,8 @@ public class PegGame
             private boolean firstTurn = true;
             private boolean firstPress = false;
             private Peg firstPeg = new Peg(0,0,0);
+            private Peg secondPeg = new Peg(0,0,0);
+            private Peg midPeg = new Peg(0,0,0);
             /**
              * Button listener method to check button clicks.
              * @param e Button clicked
@@ -350,6 +341,17 @@ public class PegGame
                 {
                     button15.setIcon(clearIcon);
                 }
+                //Checks if reset button is clicked
+                if (e.getSource() == resetButton)
+                {
+                    board.resetBoard();
+                    for(int i = 0; i < buttons.size(); i++)
+                    {
+                        buttons.get(i).setEnabled(true);
+                    }
+                    firstTurn = true;
+                    firstPress = false;
+                }
                 //If it is the first turn, the player clicks a button to remove that peg
                 if(firstTurn == true)
                 {
@@ -448,38 +450,360 @@ public class PegGame
                 //After first turn, checking for peg moves
                 else
                 {
-                    titleDisplayText.setText("");
                     if(firstPress == false)
                     {
-                        firstPress = true;
+                        titleDisplayText.setText("SELECT A PEG");
                         if (e.getSource() == button1)
                         {
                             firstPeg = board.getBoard().get(0);
+                            firstPress = true;
                         }
                         else if (e.getSource() == button2)
                         {
                             firstPeg = board.getBoard().get(1);
+                            firstPress = true;
                         }
                         else if (e.getSource() == button3)
                         {
                             firstPeg = board.getBoard().get(2);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button4)
+                        {
+                            firstPeg = board.getBoard().get(3);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button5)
+                        {
+                            firstPeg = board.getBoard().get(4);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button6)
+                        {
+                            firstPeg = board.getBoard().get(5);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button7)
+                        {
+                            firstPeg = board.getBoard().get(6);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button8)
+                        {
+                            firstPeg = board.getBoard().get(7);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button9)
+                        {
+                            firstPeg = board.getBoard().get(8);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button10)
+                        {
+                            firstPeg = board.getBoard().get(9);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button11)
+                        {
+                            firstPeg = board.getBoard().get(10);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button12)
+                        {
+                            firstPeg = board.getBoard().get(11);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button13)
+                        {
+                            firstPeg = board.getBoard().get(12);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button14)
+                        {
+                            firstPeg = board.getBoard().get(13);
+                            firstPress = true;
+                        }
+                        else if (e.getSource() == button15)
+                        {
+                            firstPeg = board.getBoard().get(14);
+                            firstPress = true;
                         }
                     }
                     else
                     {
-                        firstPress = false;
+                        titleDisplayText.setText("SELECT END POSITION");
                         int posX = firstPeg.getPosX();
                         int posY = firstPeg.getPosY();
                         if (e.getSource() == button1)
                         {
-                            Peg secondPeg = board.getBoard().get(0);
-                            if(board.pegExists(posX, posY) && !board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(firstPeg, secondpeg)) { //TODO: check if move is valid
-                                //TODO: get middle peg, remove firstPeg, create secondPeg, ask player for next peg
-
+                            secondPeg = board.getBoard().get(0);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
                             }
-
                         }
-
+                        else if (e.getSource() == button2)
+                        {
+                            secondPeg = board.getBoard().get(1);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button3)
+                        {
+                            secondPeg = board.getBoard().get(2);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button4)
+                        {
+                            secondPeg = board.getBoard().get(3);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button5)
+                        {
+                            secondPeg = board.getBoard().get(4);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button6)
+                        {
+                            secondPeg = board.getBoard().get(5);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button7)
+                        {
+                            secondPeg = board.getBoard().get(6);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button8)
+                        {
+                            secondPeg = board.getBoard().get(7);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button9)
+                        {
+                            secondPeg = board.getBoard().get(8);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if(e.getSource() == button10)
+                        {
+                            secondPeg = board.getBoard().get(9);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button11)
+                        {
+                            secondPeg = board.getBoard().get(10);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button12)
+                        {
+                            secondPeg = board.getBoard().get(11);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button13)
+                        {
+                            secondPeg = board.getBoard().get(12);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button14)
+                        {
+                            secondPeg = board.getBoard().get(13);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
+                        else if (e.getSource() == button15)
+                        {
+                            secondPeg = board.getBoard().get(14);
+                            //Checks if first peg exists, if second peg doesn't exist, and if there is a peg in between the two pegs
+                            if(board.pegExists(posX, posY) && board.pegExists(secondPeg.getPosX(),secondPeg.getPosY()) && rules.isMidPeg(board, firstPeg.getNum(), secondPeg.getNum()))
+                            {
+                                //checks if move is valid
+                                if(rules.isValidMove(board, firstPeg.getNum(), rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()), secondPeg.getNum()))
+                                {
+                                    midPeg = board.getBoard().get(rules.findMidPeg(board, firstPeg.getNum(), secondPeg.getNum()) - 1);
+                                    //remove firstPeg, create secondPeg, ask player for next peg
+                                    board.getBoard().get(firstPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(midPeg.getNum() - 1).setValue(0);
+                                    board.getBoard().get(secondPeg.getNum() - 1).setValue(1);
+                                    firstPress = false;
+                                }
+                            }
+                        }
                         //Checks if player has won the game
                         if(rules.checkWinner(board) == true && rules.checkLoser(board) == false)
                         {
@@ -489,7 +813,6 @@ public class PegGame
                                 buttons.get(i).setEnabled(false);
                             }
                         }
-
                         //Checks if player has lost the game
                         if(rules.checkLoser(board) == true && rules.checkWinner(board) == false)
                         {
@@ -499,192 +822,6 @@ public class PegGame
                                 buttons.get(i).setEnabled(false);
                             }
                         }
-
-                    }
-
-                    if (e.getSource() == button1)
-                    {
-                        if(rules.canMove(board, 1) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 1);
-                            board.movePeg(1, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                            /*Check all possible moves (i.e. copy some code from canMove: around peg 1 there are two pegs. 
-                            If pegs 2 and 3 both have value of 1, then if either or both pegs 4 and 6 have either value of 0, then set icons of pegs 4 and 6 to redXIcon.
-                            Need another if statement for e.getSource() is a button that has a redXIcon, so player can click to move the peg manually
-
-                            if (button4.getIcon().equals(redXIcon) {};
-
-                            then do board.movePeg();
-                             */
-                        }
-                    }
-                    else if(e.getSource() == button2)
-                    {
-                        if(rules.canMove(board, 2) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 2);
-                            board.movePeg(2, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-
-                        }    
-                    }
-                    else if(e.getSource() == button3)
-                    {
-                        if(rules.canMove(board, 3) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 3);
-                            board.movePeg(3, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button4)
-                    {
-                        if(rules.canMove(board, 4) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 4);
-                            board.movePeg(4, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button5)
-                    {
-                        if(rules.canMove(board, 5) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 5);
-                            board.movePeg(5, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button6)
-                    {
-                        if(rules.canMove(board, 6) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 6);
-                            board.movePeg(6, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button7)
-                    {
-                        if(rules.canMove(board, 7) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 7);
-                            board.movePeg(7, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button8)
-                    {
-                        if(rules.canMove(board, 8) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 8);
-                            board.movePeg(8, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button9)
-                    {
-                        if(rules.canMove(board, 9) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 9);
-                            board.movePeg(9, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button10)
-                    {
-                        if(rules.canMove(board, 10) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 10);
-                            board.movePeg(10, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button11)
-                    {
-                        if(rules.canMove(board, 11) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 11);
-                            board.movePeg(11, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button12)
-                    {
-                        if(rules.canMove(board, 12) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 12);
-                            board.movePeg(12, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum()); 
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button13)
-                    {
-                        if(rules.canMove(board, 13) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 13);
-                            board.movePeg(13, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if(e.getSource() == button14)
-                    {
-                        if(rules.canMove(board, 14) == 1)
-                        {
-                            int[] posXY = rules.findOneMove(board, 14);
-                            board.movePeg(14, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }
-                    }
-                    else if(e.getSource() == button15)
-                    {
-                        if(rules.canMove(board, 1) == 15)
-                        {
-                            int[] posXY = rules.findOneMove(board, 15);
-                            board.movePeg(15, board.getPeg(posXY[0], posXY[1]).getNum(), board.getPeg(posXY[2], posXY[3]).getNum());
-                        }
-                        else if (rules.canMove(board, 1) > 1)
-                        {
-                        }    
-                    }
-                    else if (e.getSource() == resetButton)
-                    {
-                        board.resetBoard();
-                        titleDisplayText.setText("REMOVE A PEG");
-                        for(int i = 0; i < buttons.size(); i++)
-                        {
-                            buttons.get(i).setEnabled(true);
-                        }
-                        firstTurn = true;
                     }
                 }
                 SwingUtilities.updateComponentTreeUI(boardFrame);
