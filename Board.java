@@ -89,23 +89,34 @@ public class Board
       board.get(end - 1).setValue(1);
     }
   }
+  public boolean pegExists(int posX, int posY) {
+        for(int i = 0; i < board.size(); i++)
+        {
+            if(posX >= 1 && posX <= 9 && posY >= 1 && posY <= 5 && posX == board.get(i).getPosX() && posY == board.get(i).getPosY())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
   /**
    * Finds peg in given X and Y spot
    * @param posX Position x of the peg
    * @param posY Position y of the peg
    * @return Peg A peg with given position
    */
-  public Peg getPeg(int posX, int posY)
-  {
-    for(int i = 0; i < board.size(); i++)
+  //Finds peg in given X and Y spot
+    public Peg getPeg(int posX, int posY) throws IllegalArgumentException
     {
-      if(posX >= 1 && posX <= 9 && posY >= 1 && posY <= 5 && posX == board.get(i).getPosX() && posY == board.get(i).getPosY())
-      {
-        return board.get(i);
-      }
+        for(int i = 0; i < board.size(); i++)
+        {
+            if(posX >= 1 && posX <= 9 && posY >= 1 && posY <= 5 && posX == board.get(i).getPosX() && posY == board.get(i).getPosY())
+            {
+                return board.get(i);
+            }
+        }
+        throw new IllegalArgumentException();
     }
-    return null;
-  }
   /**
    * Returns Arraylist board
    * @return ArrayList<Peg> An array list containing pegs
